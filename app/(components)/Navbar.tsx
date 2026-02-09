@@ -22,7 +22,8 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
-  const { getTotalItems, toggleCart } = useCartStore();
+  const items = useCartStore((state) => state.items);
+  const toggleCart = useCartStore((state) => state.toggleCart);
   const [mounted, setMounted] = useState(false);
 
   // Handle hydration
@@ -81,9 +82,9 @@ export default function Navbar() {
               className="relative p-3 min-w-[44px] min-h-[44px] flex items-center justify-center hover:text-orange-500 transition-colors group"
             >
               <ShoppingBag className="w-6 h-6 text-slate-700 group-hover:text-orange-500 transition-colors" />
-              {mounted && getTotalItems() > 0 && (
+              {mounted && items.length > 0 && (
                 <span className="absolute top-0 right-0 w-4 h-4 bg-orange-500 text-white text-[10px] font-bold flex items-center justify-center rounded-full shadow-sm animate-in zoom-in duration-300">
-                  {getTotalItems()}
+                  {items.length}
                 </span>
               )}
             </button>
@@ -104,9 +105,9 @@ export default function Navbar() {
               className="relative p-2 min-w-[44px] min-h-[44px] flex items-center justify-center"
             >
               <ShoppingBag className="w-6 h-6 text-slate-900" />
-              {mounted && getTotalItems() > 0 && (
+              {mounted && items.length > 0 && (
                 <span className="absolute -top-1 -right-1 w-5 h-5 bg-orange-500 text-white text-xs font-bold flex items-center justify-center rounded-full shadow-sm">
-                  {getTotalItems()}
+                  {items.length}
                 </span>
               )}
             </button>
