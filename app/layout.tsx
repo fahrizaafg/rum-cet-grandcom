@@ -1,10 +1,7 @@
 import type { Metadata } from "next";
 import { Plus_Jakarta_Sans, Playfair_Display } from "next/font/google";
 import "./globals.css";
-import Navbar from "./(components)/Navbar";
-import Footer from "./(components)/Footer";
-import WhatsAppFloat from "./(components)/WhatsAppFloat";
-import CartDrawer from "./(components)/CartDrawer";
+import ClientLayout from "./ClientLayout";
 
 // Configure Fonts
 const plusJakarta = Plus_Jakarta_Sans({ 
@@ -60,20 +57,9 @@ export default function RootLayout({
   return (
     <html lang="id" className={`${plusJakarta.variable} ${playfair.variable}`}>
       <body className="min-h-screen flex flex-col bg-secondary selection:bg-primary selection:text-white overflow-x-hidden">
-        {/* Navbar Global */}
-        <Navbar />
-        
-        {/* Main Content Area */}
-        <main className="flex-grow pt-16 pb-24 relative">
+        <ClientLayout>
           {children}
-        </main>
-        
-        {/* Floating WhatsApp Button */}
-        <WhatsAppFloat />
-        <CartDrawer />
-        
-        {/* Footer Global */}
-        <Footer />
+        </ClientLayout>
       </body>
     </html>
   );
