@@ -23,7 +23,6 @@ export default function CartDrawer() {
   // Handle hydration mismatch
   const [mounted, setMounted] = useState(false);
   useEffect(() => {
-    useCartStore.persist.rehydrate();
     setMounted(true);
   }, []);
 
