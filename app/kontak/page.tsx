@@ -63,30 +63,30 @@ export default function ContactPage() {
                 </div>
 
                 {/* Social Media & Marketplace */}
-                <div className="flex items-start group">
-                  <div className="bg-orange-50 p-4 rounded-2xl mr-6 flex-shrink-0 group-hover:bg-primary transition-colors duration-300">
+                <div className="flex flex-col sm:flex-row items-start group w-full overflow-hidden">
+                  <div className="bg-orange-50 p-4 rounded-2xl mb-4 sm:mb-0 sm:mr-6 flex-shrink-0 group-hover:bg-primary transition-colors duration-300">
                     <Mail className="w-6 h-6 text-primary group-hover:text-white transition-colors duration-300" />
                   </div>
-                  <div>
+                  <div className="w-full min-w-0">
                     <h3 className="font-bold text-slate-900 text-lg mb-1">Online Shop & Social</h3>
-                    <div className="flex flex-col gap-3 mt-2">
-                      <a href="https://instagram.com/rumah_cetak_grandcom" target="_blank" className="flex items-center gap-3 p-3 rounded-xl bg-slate-50 hover:bg-orange-50 hover:text-primary transition-all group/item">
-                        <div className="bg-white p-2 rounded-lg shadow-sm group-hover/item:text-primary text-slate-400 transition-colors">
+                    <div className="flex flex-col gap-3 mt-2 w-full">
+                      <a href="https://instagram.com/rumah_cetak_grandcom" target="_blank" className="flex items-center gap-3 p-3 rounded-xl bg-slate-50 hover:bg-orange-50 hover:text-primary transition-all group/item w-full max-w-full overflow-hidden">
+                        <div className="bg-white p-2 rounded-lg shadow-sm group-hover/item:text-primary text-slate-400 transition-colors flex-shrink-0">
                             <Instagram className="w-5 h-5" />
                         </div>
-                        <span className="font-medium text-slate-700 group-hover/item:text-primary">@rumah_cetak_grandcom</span>
+                        <span className="font-medium text-slate-700 group-hover/item:text-primary text-sm sm:text-base truncate block flex-1">@rumah_cetak_grandcom</span>
                       </a>
-                      <a href="https://instagram.com/undanganmanis" target="_blank" className="flex items-center gap-3 p-3 rounded-xl bg-slate-50 hover:bg-orange-50 hover:text-primary transition-all group/item">
-                        <div className="bg-white p-2 rounded-lg shadow-sm group-hover/item:text-primary text-slate-400 transition-colors">
+                      <a href="https://instagram.com/undanganmanis" target="_blank" className="flex items-center gap-3 p-3 rounded-xl bg-slate-50 hover:bg-orange-50 hover:text-primary transition-all group/item w-full max-w-full overflow-hidden">
+                        <div className="bg-white p-2 rounded-lg shadow-sm group-hover/item:text-primary text-slate-400 transition-colors flex-shrink-0">
                             <Instagram className="w-5 h-5" />
                         </div>
-                        <span className="font-medium text-slate-700 group-hover/item:text-primary">@undanganmanis</span>
+                        <span className="font-medium text-slate-700 group-hover/item:text-primary text-sm sm:text-base truncate block flex-1">@undanganmanis</span>
                       </a>
-                      <a href="https://shopee.co.id/rumahcetak_grandcom" target="_blank" className="flex items-center gap-3 p-3 rounded-xl bg-slate-50 hover:bg-orange-50 hover:text-primary transition-all group/item">
-                        <div className="bg-white p-2 rounded-lg shadow-sm group-hover/item:text-primary text-slate-400 transition-colors">
+                      <a href="https://shopee.co.id/rumahcetak_grandcom" target="_blank" className="flex items-center gap-3 p-3 rounded-xl bg-slate-50 hover:bg-orange-50 hover:text-primary transition-all group/item w-full max-w-full overflow-hidden">
+                        <div className="bg-white p-2 rounded-lg shadow-sm group-hover/item:text-primary text-slate-400 transition-colors flex-shrink-0">
                             <ShoppingBag className="w-5 h-5" />
                         </div>
-                        <span className="font-medium text-slate-700 group-hover/item:text-primary">Rumah Cetak Grandcom</span>
+                        <span className="font-medium text-slate-700 group-hover/item:text-primary text-sm sm:text-base truncate block flex-1">Rumah Cetak Grandcom</span>
                       </a>
                     </div>
                   </div>

@@ -21,7 +21,7 @@ export default function ClientLayout({
   return (
     <>
       <Navbar />
-      <main className="flex-grow pt-16 pb-24 relative">
+      <main className="flex-grow pt-16 relative">
         {children}
       </main>
       <WhatsAppFloat />

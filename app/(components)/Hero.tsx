@@ -46,13 +46,8 @@ export default function Hero() {
            }}>
       </div>
 
-      {/* Decorative Serial Numbers */}
-      <div className="absolute top-24 left-6 font-mono text-xs text-muted tracking-widest opacity-60">
-        REF: PRNT-2024-V1
-      </div>
-      <div className="absolute bottom-12 right-6 font-mono text-xs text-muted tracking-widest opacity-60 text-right">
-        EST. 2024 <br/> GRM-STD
-      </div>
+      {/* Decorative Serial Numbers - REMOVED */}
+
 
       <div className="max-w-7xl mx-auto w-full relative z-10">
         {/* Asymmetric 12-Column Grid */}
