@@ -41,7 +41,11 @@ export default function CartDrawer() {
   };
 
   const handleWhatsAppCheckout = () => {
-    const phoneNumber = '6289677104929'; // Use the updated correct number
+    const phoneNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '6289677104929'; // Use env var with fallback
+    
+    // Safety check: Don't proceed if cart is empty
+    if (sortedItems.length === 0) return;
+
     const totalPrice = formatCurrency(getTotalPrice());
     
     let message = `Halo Percetakan Ibu, saya ingin memesan:\n\n`;
