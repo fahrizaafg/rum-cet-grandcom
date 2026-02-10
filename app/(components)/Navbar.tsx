@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { useState, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 import { Menu, X, ShoppingBag } from 'lucide-react';
@@ -54,8 +55,18 @@ export default function Navbar() {
         <div className="flex justify-between items-center h-20 md:h-24">
             {/* Logo Section */}
             <div className="flex items-center">
-              <Link href="/" className="text-2xl md:text-3xl font-extrabold tracking-tight text-dark" onClick={closeMenu}>
-                RumahCetak<span className="text-primary">Grandcom</span>
+              <Link href="/" className="flex items-center gap-2 md:gap-3 group" onClick={closeMenu}>
+                <Image 
+                  src="/images/logo.png" 
+                  alt="Rumah Cetak Grandcom" 
+                  width={40} 
+                  height={40} 
+                  className="h-[32px] md:h-[40px] w-auto object-contain"
+                  priority
+                />
+                <span className="font-sans font-extrabold text-lg md:text-xl text-slate-900 hidden min-[375px]:block group-hover:text-primary transition-colors tracking-tight">
+                  RumahCetak<span className="text-primary">Grandcom</span>
+                </span>
               </Link>
             </div>
             

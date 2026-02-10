@@ -25,6 +25,10 @@ export const metadata: Metadata = {
   description: "Jasa percetakan berkualitas tinggi untuk undangan, spanduk, kartu nama, dan kebutuhan branding bisnis Anda. Cepat, murah, dan profesional.",
   keywords: ["percetakan", "cetak undangan", "digital printing", "spanduk", "kartu nama", "brosur", "percetakan murah"],
   authors: [{ name: "Rumah Cetak Grandom" }],
+  icons: {
+    icon: '/images/logo.png?v=1',
+    apple: '/images/logo.png?v=1',
+  },
   openGraph: {
     title: 'Rumah Cetak Grandom - Solusi Cetak Kreatif & Cepat',
     description: 'Jasa percetakan berkualitas tinggi untuk undangan, spanduk, kartu nama, dan kebutuhan branding bisnis Anda.',

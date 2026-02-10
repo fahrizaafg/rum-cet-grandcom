@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { MapPin, Phone, Mail, Clock } from 'lucide-react';
 
 export default function Footer() {
@@ -10,9 +11,15 @@ export default function Footer() {
           {/* Column 1: Brand & Address */}
           <div className="space-y-6">
             <div>
-              <h3 className="text-2xl font-extrabold tracking-tight text-slate-900">
-                RumahCetak<span className="text-orange-500">Grandcom</span>
-              </h3>
+              <Link href="/" className="block mb-4">
+                <Image 
+                  src="/images/logo.png" 
+                  alt="Rumah Cetak Grandcom" 
+                  width={200} 
+                  height={60} 
+                  className="h-[60px] w-auto object-contain grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                />
+              </Link>
               <p className="text-sm text-slate-500 mt-2 leading-relaxed">
                 Creative Studio & Digital Printing.
                 <br />
