@@ -119,7 +119,7 @@ export default function CartDrawer() {
               ) : (
                 sortedItems.map((item) => {
                   // Fallback to product data if iconName is missing in cart item (handle stale state)
-                  const product = products.find(p => p.id === item.id);
+                  const product = products.find(p => p.id === item.id || p.variants?.some(v => v.id === item.id));
                   const iconName = item.iconName || product?.iconName || 'Box';
                   
                   return (

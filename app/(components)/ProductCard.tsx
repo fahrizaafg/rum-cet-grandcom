@@ -13,17 +13,20 @@ interface ProductCardProps {
 
 export default function ProductCard({ product, index = 0 }: ProductCardProps) {
   const [qty, setQty] = useState(100);
+  const [selectedVariant, setSelectedVariant] = useState(product.variants?.[0] || null);
   const { addToCart } = useCartStore();
   
+  const currentPrice = selectedVariant ? selectedVariant.price : product.basePrice;
+
   // Calculate price logic
   const calculatePrice = () => {
-    if (product.basePrice === 0) return null;
+    if (currentPrice === 0) return null;
     
     let discount = 0;
     if (qty >= 1000) discount = 0.10; // 10% off
     else if (qty >= 500) discount = 0.05; // 5% off
     
-    const total = product.basePrice * qty * (1 - discount);
+    const total = currentPrice * qty * (1 - discount);
     return total;
   };
 
@@ -41,9 +44,9 @@ export default function ProductCard({ product, index = 0 }: ProductCardProps) {
     if (!calculatedPrice) return;
     
     addToCart({
-      id: product.id,
-      name: product.name,
-      price: product.basePrice * (1 - (qty >= 1000 ? 0.10 : qty >= 500 ? 0.05 : 0)), // Apply discount to unit price
+      id: selectedVariant ? selectedVariant.id : product.id,
+      name: selectedVariant ? `${product.name} (${selectedVariant.name})` : product.name,
+      price: currentPrice * (1 - (qty >= 1000 ? 0.10 : qty >= 500 ? 0.05 : 0)), // Apply discount to unit price
       quantity: qty,
       image: product.image,
       iconName: product.iconName
@@ -101,7 +104,7 @@ export default function ProductCard({ product, index = 0 }: ProductCardProps) {
         </p>
         
         {/* Quick Pricing Calculator */}
-        {product.basePrice > 0 && (
+        {(product.basePrice > 0 || (selectedVariant && selectedVariant.price > 0)) && (
           <div className="bg-slate-50 p-4 rounded-xl border border-slate-100 mb-6 relative z-20">
             <div className="flex justify-between items-center mb-3">
               <span className="text-xs font-bold text-slate-500 uppercase">Estimasi Harga</span>
@@ -109,6 +112,26 @@ export default function ProductCard({ product, index = 0 }: ProductCardProps) {
                 {calculatedPrice ? formatCurrency(calculatedPrice) : '-'}
               </span>
             </div>
+            
+            {/* Variant Selector */}
+            {product.variants && product.variants.length > 0 && (
+              <div className="mb-3">
+                <label className="text-xs font-bold text-slate-500 uppercase mb-1 block">Pilih Tipe / Ukuran</label>
+                <select 
+                  className="w-full px-3 py-2 text-sm font-bold text-slate-900 bg-white border border-slate-200 rounded-lg focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary"
+                  value={selectedVariant?.id}
+                  onChange={(e) => {
+                    const v = product.variants?.find(v => v.id === e.target.value);
+                    setSelectedVariant(v || null);
+                  }}
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  {product.variants.map(v => (
+                    <option key={v.id} value={v.id}>{v.name} - {formatCurrency(v.price)}</option>
+                  ))}
+                </select>
+              </div>
+            )}
             
             {/* Quantity Selector */}
             <div className="flex items-center gap-2 mb-4 relative z-30">
