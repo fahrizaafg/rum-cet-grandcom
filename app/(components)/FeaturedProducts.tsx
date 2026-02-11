@@ -37,7 +37,7 @@ const BentoItem = ({
     <motion.div
       variants={itemVariants}
       whileHover={{ y: -5 }}
-      className={`relative overflow-hidden rounded-3xl border border-slate-100 bg-white shadow-sm transition-all duration-300 hover:shadow-2xl group ${className}`}
+      className={`relative overflow-hidden rounded-3xl border border-slate-100 bg-white shadow-sm transition-shadow duration-300 hover:shadow-2xl group ${className}`}
     >
       {children}
     </motion.div>

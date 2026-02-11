@@ -4,7 +4,7 @@ import { MapPin, Clock } from 'lucide-react';
 
 export default function Footer() {
   return (
-    <footer className="bg-slate-50 text-slate-600 pt-16 pb-8 border-t border-slate-100">
+    <footer className="bg-slate-50 text-slate-700 pt-16 pb-8 border-t border-slate-100">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-20">
           
@@ -20,7 +20,7 @@ export default function Footer() {
                   className="h-[60px] w-auto object-contain grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
                 />
               </Link>
-              <p className="text-sm text-slate-500 mt-2 leading-relaxed">
+              <p className="text-sm text-slate-600 mt-2 leading-relaxed">
                 Creative Studio & Digital Printing.
                 <br />
                 Mewujudkan ide kreatif Anda menjadi produk cetak berkualitas premium.
@@ -87,7 +87,7 @@ export default function Footer() {
                 </div>
               </div>
               <div className="mt-6 pt-6 border-t border-slate-200">
-                <p className="text-xs text-slate-400">
+                <p className="text-xs text-slate-500">
                   *Minggu & Tanggal Merah Libur
                 </p>
               </div>
@@ -96,7 +96,7 @@ export default function Footer() {
         </div>
 
         {/* Divider & Copyright */}
-        <div className="mt-8 pt-8 border-t border-orange-200/50 flex flex-col md:flex-row justify-between items-center text-sm text-slate-400">
+        <div className="mt-8 pt-8 border-t border-orange-200/50 flex flex-col md:flex-row justify-between items-center text-sm text-slate-500">
           <p>&copy; {new Date().getFullYear()} Rumah Cetak Grandcom. All rights reserved.</p>
           <div className="flex space-x-6 mt-4 md:mt-0">
              <a href="https://instagram.com/rumah_cetak_grandcom" target="_blank" rel="noopener noreferrer" className="hover:text-orange-500 transition-colors">Instagram</a>

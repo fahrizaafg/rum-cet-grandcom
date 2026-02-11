@@ -55,39 +55,24 @@ export default function Hero() {
           
           {/* Headline - Top Left (Spans 8 cols) */}
           <div className="col-span-12 lg:col-span-9 relative">
-            <motion.h1 
+            <h1 
               className="font-display text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-extrabold text-dark leading-[0.9] tracking-tighter"
-              variants={sentence}
-              initial="hidden"
-              animate="visible"
             >
               {/* Line 1 */}
               <span className="block mb-2">
-                {"Cetak Ide,".split("").map((char, index) => (
-                  <motion.span key={index} variants={letter} className="inline-block">
-                    {char === " " ? "\u00A0" : char}
-                  </motion.span>
-                ))}
+                Cetak Ide,
               </span>
               
               {/* Line 2 with Outline Effect */}
-              <span className="block text-transparent stroke-text-dark">
-                {"Wujudkan".split("").map((char, index) => (
-                  <motion.span key={index} variants={letter} className="inline-block" style={{ WebkitTextStroke: '2px #1A1A1A' }}>
-                    {char}
-                  </motion.span>
-                ))}
+              <span className="block text-transparent stroke-text-dark" style={{ WebkitTextStroke: '2px #1A1A1A' }}>
+                Wujudkan
               </span>
 
               {/* Line 3 */}
               <span className="block text-primary italic pr-4">
-                {"Karya.".split("").map((char, index) => (
-                  <motion.span key={index} variants={letter} className="inline-block">
-                    {char}
-                  </motion.span>
-                ))}
+                Karya.
               </span>
-            </motion.h1>
+            </h1>
           </div>
 
           {/* Floating Asset 1 - Top Right (Decorative) */}

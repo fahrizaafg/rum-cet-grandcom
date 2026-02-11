@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Plus_Jakarta_Sans, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import ClientLayout from "./ClientLayout";
+import JsonLd from "./(components)/JsonLd";
 
 // Configure Fonts
 const plusJakarta = Plus_Jakarta_Sans({ 
@@ -20,7 +21,6 @@ const playfair = Playfair_Display({
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
-  maximumScale: 1,
   themeColor: '#ffffff',
 };
 
@@ -69,6 +69,26 @@ export default function RootLayout({
   return (
     <html lang="id" className={`${plusJakarta.variable} ${playfair.variable}`}>
       <body className="min-h-screen flex flex-col bg-secondary selection:bg-primary selection:text-white overflow-x-hidden">
+        <JsonLd />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              if (typeof window !== 'undefined' && window.trustedTypes && window.trustedTypes.createPolicy) {
+                try {
+                  if (!window.trustedTypes.defaultPolicy) {
+                    window.trustedTypes.createPolicy('default', {
+                      createHTML: (string) => string,
+                      createScript: (string) => string,
+                      createScriptURL: (string) => string,
+                    });
+                  }
+                } catch (e) {
+                  console.warn('Trusted Types policy creation failed', e);
+                }
+              }
+            `
+          }}
+        />
         <ClientLayout>
           {children}
         </ClientLayout>

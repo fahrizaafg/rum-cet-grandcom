@@ -1,8 +1,12 @@
+import dynamic from 'next/dynamic';
 import Hero from "./(components)/Hero";
-import FeaturedProducts from "./(components)/FeaturedProducts";
-import ClientScaler from "./(components)/ClientScaler";
 import ScrollingText from "./(components)/ScrollingText";
-import OrderStatus from "./(components)/OrderStatus";
+
+const FeaturedProducts = dynamic(() => import("./(components)/FeaturedProducts"), {
+  loading: () => <div className="h-96 w-full bg-slate-50 animate-pulse rounded-xl" />
+});
+const ClientScaler = dynamic(() => import("./(components)/ClientScaler"));
+const OrderStatus = dynamic(() => import("./(components)/OrderStatus"));
 
 /**
  * Halaman Utama (Home)

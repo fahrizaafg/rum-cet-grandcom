@@ -20,8 +20,11 @@ export default function ClientLayout({
 
   return (
     <>
+      <a href="#main" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 z-[100] bg-white text-primary px-4 py-2 rounded-md shadow-lg font-bold">
+        Langsung ke konten
+      </a>
       <Navbar />
-      <main className="flex-grow pt-16 relative">
+      <main id="main" className="flex-grow pt-16 relative">
         {children}
       </main>
       <WhatsAppFloat />

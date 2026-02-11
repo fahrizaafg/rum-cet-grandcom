@@ -63,7 +63,7 @@ export default function ProductCard({ product, index = 0 }: ProductCardProps) {
         <div className={`absolute inset-0 bg-gray-200/50 rounded-3xl transform rotate-3 scale-95 group-hover:rotate-6 transition-transform duration-500 -z-10 ${index % 2 === 0 ? 'rotate-3' : '-rotate-2'}`}></div>
         
         {/* Main Card Container */}
-        <div className="relative aspect-square md:aspect-[4/5] w-full bg-white rounded-2xl overflow-hidden shadow-sm group-hover:shadow-2xl transition-all duration-500 border border-gray-100/50">
+        <div className="relative aspect-square md:aspect-[4/5] w-full bg-white rounded-2xl overflow-hidden shadow-sm group-hover:shadow-2xl transition-shadow duration-500 border border-gray-100/50">
           
           {/* Icon/Image Placeholder Area */}
           <div className="absolute inset-0 flex items-center justify-center bg-secondary/30 relative overflow-hidden">

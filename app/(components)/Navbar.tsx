@@ -46,7 +46,7 @@ export default function Navbar() {
 
   return (
     <nav 
-      className={`fixed w-full z-50 transition-all duration-300 border-b ${
+      className={`fixed w-full z-50 transition-colors duration-300 border-b ${
         scrolled 
           ? 'bg-white/95 backdrop-blur-md border-gray-200/50 shadow-sm py-0' 
           : 'bg-white/80 backdrop-blur-md border-transparent py-2'
@@ -92,6 +92,7 @@ export default function Navbar() {
             <button
               onClick={toggleCart}
               className="relative p-3 min-w-[44px] min-h-[44px] flex items-center justify-center hover:text-orange-500 transition-colors group"
+              aria-label="Keranjang Belanja"
             >
               <ShoppingBag className="w-6 h-6 text-slate-700 group-hover:text-orange-500 transition-colors" />
               {mounted && items.length > 0 && (
@@ -115,6 +116,7 @@ export default function Navbar() {
             <button
               onClick={toggleCart}
               className="relative p-2 min-w-[44px] min-h-[44px] flex items-center justify-center"
+              aria-label="Keranjang Belanja"
             >
               <ShoppingBag className="w-6 h-6 text-slate-900" />
               {mounted && items.length > 0 && (
