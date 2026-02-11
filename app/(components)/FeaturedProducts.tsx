@@ -3,7 +3,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, Star, Award, Zap, Palette, Gift, Coffee } from 'lucide-react';
-import Image from 'next/image';
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -29,7 +28,6 @@ const itemVariants = {
 const BentoItem = ({
   children,
   className = '',
-  delay = 0,
 }: {
   children: React.ReactNode;
   className?: string;
@@ -51,6 +49,9 @@ export default function FeaturedProducts() {
     <section className="py-16 px-4 md:px-8 bg-slate-50">
       <div className="max-w-7xl mx-auto">
         <div className="mb-12 text-center">
+          <span className="font-sans text-xs font-bold tracking-[0.2em] text-orange-500 uppercase mb-4 block">
+            Best Seller
+          </span>
           <h2 className="text-3xl md:text-4xl font-display font-bold text-slate-900 mb-4">
             Produk Unggulan
           </h2>

@@ -2,6 +2,8 @@ import { Metadata } from 'next';
 import { Palette, Printer, Zap, Package, CheckCircle, ArrowRight, MessageCircle } from 'lucide-react';
 import FadeInUp from '../(components)/FadeInUp';
 import Accordion from '../(components)/Accordion';
+import ServiceCard from '../(components)/ServiceCard';
+import { services } from '../(data)/services';
 
 export const metadata: Metadata = {
   title: 'Layanan Kami',
@@ -57,7 +59,7 @@ export default function ServicesPage() {
               <CheckCircle className="w-5 h-5 text-green-500 shrink-0 mt-0.5" />
               <div>
                 <strong className="text-slate-900 block">Stiker Transparan</strong>
-                <span className="text-sm">Berbasis plastik bening. Memberikan kesan "no-label look" yang elegan. Cocok untuk botol minuman berwarna atau kemasan produk yang ingin menonjolkan isinya.</span>
+                <span className="text-sm">Berbasis plastik bening. Memberikan kesan &quot;no-label look&quot; yang elegan. Cocok untuk botol minuman berwarna atau kemasan produk yang ingin menonjolkan isinya.</span>
               </div>
             </li>
           </ul>
@@ -102,7 +104,7 @@ export default function ServicesPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="bg-slate-50 p-4 rounded-xl border border-slate-100">
               <strong className="text-slate-900 block mb-1">Laminasi Glossy</strong>
-              <p className="text-sm">Memberikan efek mengkilap, memantulkan cahaya, dan membuat warna terlihat lebih tajam dan "pop". Tahan air dan kotoran.</p>
+              <p className="text-sm">Memberikan efek mengkilap, memantulkan cahaya, dan membuat warna terlihat lebih tajam dan &quot;pop&quot;. Tahan air dan kotoran.</p>
             </div>
             <div className="bg-slate-50 p-4 rounded-xl border border-slate-100">
               <strong className="text-slate-900 block mb-1">Laminasi Doff (Matte)</strong>
@@ -154,6 +156,36 @@ export default function ServicesPage() {
                     {pillar.description}
                   </p>
                 </div>
+              </FadeInUp>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Moved from Home: Services Grid */}
+      <section className="py-20 lg:py-32 bg-secondary relative overflow-hidden">
+        {/* Decorative background shape */}
+        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-dark/10 to-transparent"></div>
+        
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+          {/* Section Header */}
+          <FadeInUp className="text-center mb-20 lg:mb-24">
+            <span className="font-sans text-xs font-bold tracking-[0.2em] text-primary uppercase mb-4 block">
+              Our Expertise
+            </span>
+            <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-dark mb-6 tracking-tight">
+              Layanan Unggulan
+            </h2>
+            <p className="font-sans text-lg text-muted max-w-2xl mx-auto leading-relaxed">
+              Kami menggabungkan teknologi modern dengan sentuhan artistik untuk memenuhi kebutuhan branding Anda.
+            </p>
+          </FadeInUp>
+          
+          {/* Services Grid - Asymmetric Layout */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 gap-y-12">
+            {services.map((service, index) => (
+              <FadeInUp key={service.id} delay={index * 0.1} className={index % 2 === 1 ? "md:mt-12" : ""}>
+                <ServiceCard service={service} />
               </FadeInUp>
             ))}
           </div>

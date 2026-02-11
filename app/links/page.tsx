@@ -9,8 +9,7 @@ import {
   ExternalLink,
   Home
 } from 'lucide-react';
-import Link from 'next/link';
-import Image from 'next/image';
+// Removed unused imports
 
 // Data sourced from project files
 const CONTACT_INFO = {
@@ -71,7 +70,7 @@ const itemVariants: Variants = {
     y: 0,
     transition: {
       duration: 0.5,
-      ease: [0.4, 0, 0.2, 1] as any,
+      ease: [0.4, 0, 0.2, 1],
     },
   },
 };

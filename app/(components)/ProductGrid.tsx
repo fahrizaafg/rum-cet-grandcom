@@ -2,10 +2,11 @@
 
 import { useState, useMemo, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Search, X, ChevronLeft, ChevronRight, ArrowUp } from 'lucide-react';
-import { products, Category as ProductCategory } from '../(data)/products';
+import { Search, X, ChevronLeft, ChevronRight, ArrowUp, Ruler } from 'lucide-react';
+import { products } from '../(data)/products';
 import ProductCard from './ProductCard';
 import CategoryFilter, { Category } from './CategoryFilter';
+import SizeGuideModal from './SizeGuideModal';
 
 const categories: Category[] = [
   'Semua Produk',
@@ -24,6 +25,7 @@ export default function ProductGrid() {
   const [searchQuery, setSearchQuery] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
   const [showBackToTop, setShowBackToTop] = useState(false);
+  const [isSizeGuideOpen, setIsSizeGuideOpen] = useState(false);
 
   // Scroll to top listener
   useEffect(() => {
@@ -36,6 +38,7 @@ export default function ProductGrid() {
 
   // Reset pagination when filter/search changes
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     setCurrentPage(1);
   }, [selectedCategory, searchQuery]);
 
@@ -126,11 +129,23 @@ export default function ProductGrid() {
           counts={categoryCounts}
         />
 
-        {/* Info Text */}
-        <div className="text-center text-sm text-slate-500 font-sans font-medium animate-in fade-in slide-in-from-bottom-2 duration-500">
-            Menampilkan <span className="font-bold text-slate-900">{filteredProducts.length > 0 ? (currentPage - 1) * ITEMS_PER_PAGE + 1 : 0}</span> - <span className="font-bold text-slate-900">{Math.min(currentPage * ITEMS_PER_PAGE, filteredProducts.length)}</span> dari <span className="font-bold text-slate-900">{filteredProducts.length}</span> produk
+        {/* Info Text & Size Guide */}
+        <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+          <div className="text-sm text-slate-500 font-sans font-medium animate-in fade-in slide-in-from-bottom-2 duration-500">
+              Menampilkan <span className="font-bold text-slate-900">{filteredProducts.length > 0 ? (currentPage - 1) * ITEMS_PER_PAGE + 1 : 0}</span> - <span className="font-bold text-slate-900">{Math.min(currentPage * ITEMS_PER_PAGE, filteredProducts.length)}</span> dari <span className="font-bold text-slate-900">{filteredProducts.length}</span> produk
+          </div>
+
+          <button
+            onClick={() => setIsSizeGuideOpen(true)}
+            className="flex items-center gap-2 px-4 py-2 bg-white border border-slate-200 rounded-full text-sm font-bold text-slate-700 hover:border-orange-500 hover:text-orange-500 transition-all shadow-sm hover:shadow-md"
+          >
+            <Ruler className="w-4 h-4" />
+            Panduan Ukuran
+          </button>
         </div>
       </div>
+
+      <SizeGuideModal isOpen={isSizeGuideOpen} onClose={() => setIsSizeGuideOpen(false)} />
 
       {/* Asymmetric Grid */}
       <motion.div 
@@ -180,7 +195,7 @@ export default function ProductGrid() {
             <button
                 onClick={() => handlePageChange(currentPage - 1)}
                 disabled={currentPage === 1}
-                className="p-3 rounded-full border border-slate-200 text-slate-500 hover:bg-slate-50 hover:text-slate-900 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
+                className="p-3 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-full border border-slate-200 text-slate-500 hover:bg-slate-50 hover:text-slate-900 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
                 aria-label="Previous Page"
             >
                 <ChevronLeft className="w-5 h-5" />
@@ -199,7 +214,7 @@ export default function ProductGrid() {
                             key={page}
                             onClick={() => handlePageChange(page)}
                             className={`
-                                w-10 h-10 rounded-full font-sans font-bold text-sm transition-all
+                                w-11 h-11 rounded-full font-sans font-bold text-sm transition-all
                                 ${currentPage === page 
                                     ? 'bg-primary text-white shadow-lg shadow-orange-200 scale-110' 
                                     : 'bg-white border border-slate-200 text-slate-500 hover:bg-slate-50 hover:border-slate-300'
@@ -214,7 +229,7 @@ export default function ProductGrid() {
             <button
                 onClick={() => handlePageChange(currentPage + 1)}
                 disabled={currentPage === totalPages}
-                className="p-3 rounded-full border border-slate-200 text-slate-500 hover:bg-slate-50 hover:text-slate-900 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
+                className="p-3 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-full border border-slate-200 text-slate-500 hover:bg-slate-50 hover:text-slate-900 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
                 aria-label="Next Page"
             >
                 <ChevronRight className="w-5 h-5" />

@@ -1,8 +1,9 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 import { Product } from '../(data)/products';
-import { Tag, ArrowUpRight, Zap, CheckCircle, Package, ShoppingCart } from 'lucide-react';
+import { Zap, CheckCircle, Package, ShoppingCart } from 'lucide-react';
 import ProductIcon from './ProductIcon';
 import { useCartStore } from '../(store)/useCartStore';
 
@@ -65,14 +66,27 @@ export default function ProductCard({ product, index = 0 }: ProductCardProps) {
         <div className="relative aspect-square md:aspect-[4/5] w-full bg-white rounded-2xl overflow-hidden shadow-sm group-hover:shadow-2xl transition-all duration-500 border border-gray-100/50">
           
           {/* Icon/Image Placeholder Area */}
-          <div className="absolute inset-0 flex items-center justify-center bg-secondary/30">
-             <div className="relative z-10 p-8 rounded-full bg-white shadow-sm group-hover:scale-110 transition-transform duration-500">
-               <ProductIcon iconName={product.iconName} className="w-16 h-16 text-dark/80" />
-             </div>
-             
-             {/* Decorative Elements */}
-             <div className="absolute top-0 right-0 w-32 h-32 bg-orange-100/30 rounded-full blur-2xl -translate-y-1/2 translate-x-1/2"></div>
-             <div className="absolute bottom-0 left-0 w-24 h-24 bg-blue-100/30 rounded-full blur-xl translate-y-1/2 -translate-x-1/2"></div>
+          <div className="absolute inset-0 flex items-center justify-center bg-secondary/30 relative overflow-hidden">
+             {product.image && !product.image.includes('placeholder') ? (
+               <Image 
+                  src={product.image}
+                  alt={product.name}
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  className="object-cover group-hover:scale-110 transition-transform duration-500"
+                  priority={index < 4} // Priority for first 4 items (LCP candidates)
+               />
+             ) : (
+                <>
+                  <div className="relative z-10 p-8 rounded-full bg-white shadow-sm group-hover:scale-110 transition-transform duration-500">
+                    <ProductIcon iconName={product.iconName} className="w-16 h-16 text-dark/80" />
+                  </div>
+                  
+                  {/* Decorative Elements */}
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-orange-100/30 rounded-full blur-2xl -translate-y-1/2 translate-x-1/2"></div>
+                  <div className="absolute bottom-0 left-0 w-24 h-24 bg-blue-100/30 rounded-full blur-xl translate-y-1/2 -translate-x-1/2"></div>
+                </>
+             )}
           </div>
 
           {/* Organic Price Tag */}

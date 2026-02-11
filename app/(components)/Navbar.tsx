@@ -29,6 +29,7 @@ export default function Navbar() {
 
   // Handle hydration
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     setMounted(true);
   }, []);
 

@@ -23,6 +23,7 @@ export default function CartDrawer() {
   // Handle hydration mismatch
   const [mounted, setMounted] = useState(false);
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     setMounted(true);
   }, []);
 
@@ -142,7 +143,7 @@ export default function CartDrawer() {
                         <div className="flex items-center gap-3 bg-slate-50 rounded-lg p-1">
                           <button
                             onClick={() => updateQuantity(item.id, item.quantity - 10)}
-                            className="w-10 h-10 flex items-center justify-center hover:bg-white rounded-md text-slate-500 hover:text-slate-900 transition-colors shadow-sm"
+                            className="w-11 h-11 flex items-center justify-center hover:bg-white rounded-md text-slate-500 hover:text-slate-900 transition-colors shadow-sm"
                             disabled={item.quantity <= 1}
                           >
                             <Minus className="w-4 h-4" />
@@ -156,14 +157,14 @@ export default function CartDrawer() {
                           />
                           <button
                             onClick={() => updateQuantity(item.id, item.quantity + 10)}
-                            className="w-10 h-10 flex items-center justify-center hover:bg-white rounded-md text-slate-500 hover:text-slate-900 transition-colors shadow-sm"
+                            className="w-11 h-11 flex items-center justify-center hover:bg-white rounded-md text-slate-500 hover:text-slate-900 transition-colors shadow-sm"
                           >
                             <Plus className="w-4 h-4" />
                           </button>
                         </div>
                         <button
                           onClick={() => removeFromCart(item.id)}
-                          className="w-10 h-10 flex items-center justify-center text-red-400 hover:text-red-500 hover:bg-red-50 rounded-lg transition-colors"
+                          className="w-11 h-11 flex items-center justify-center text-red-400 hover:text-red-500 hover:bg-red-50 rounded-lg transition-colors"
                           title="Hapus item"
                         >
                           <Trash2 className="w-5 h-5" />

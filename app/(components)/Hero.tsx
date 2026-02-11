@@ -116,14 +116,11 @@ export default function Hero() {
 
           {/* Sub-headline & CTA - Bottom Right (Spans 6 cols) */}
           <div className="col-span-12 lg:col-span-6 lg:col-start-7 flex flex-col items-start lg:items-end text-left lg:text-right relative">
-            <motion.p 
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 1, duration: 0.8 }}
-              className="font-sans text-lg md:text-xl text-muted max-w-md leading-relaxed mb-10"
+            <p 
+              className="font-[system-ui,sans-serif] text-lg md:text-xl text-slate-600 font-medium max-w-md leading-relaxed mb-10"
             >
               Dari merchandise custom hingga kebutuhan kantor, kami memastikan kualitas cetak terbaik dengan sentuhan desain premium.
-            </motion.p>
+            </p>
 
             {/* Organic CTA Button */}
             <motion.div
@@ -157,7 +154,13 @@ export default function Hero() {
                </div>
                <div>
                  <div className="text-xs font-bold text-muted uppercase tracking-wider">Status</div>
-                 <div className="font-sans font-bold text-dark">Ready to Print</div>
+                 <div className="font-sans font-bold text-dark flex items-center gap-2">
+                    Ready to Print
+                    <span className="relative flex h-2 w-2">
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                      <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+                    </span>
+                 </div>
                </div>
              </motion.div>
           </div>

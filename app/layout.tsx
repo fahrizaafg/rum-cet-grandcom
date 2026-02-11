@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Plus_Jakarta_Sans, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import ClientLayout from "./ClientLayout";
@@ -15,6 +15,14 @@ const playfair = Playfair_Display({
   variable: '--font-playfair',
   display: 'swap',
 });
+
+// Viewport Configuration
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
+  themeColor: '#ffffff',
+};
 
 // Metadata SEO Global
 export const metadata: Metadata = {

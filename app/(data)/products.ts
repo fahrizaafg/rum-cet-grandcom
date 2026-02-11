@@ -6,10 +6,17 @@ export type Category =
   | 'Jasa Cetak'
   | 'Lainnya';
 
+export interface Dimensions {
+  width: number;
+  height: number;
+  unit: 'cm' | 'm' | 'mm';
+}
+
 export interface ProductVariant {
   id: string;
   name: string;
   price: number;
+  dimensions?: Dimensions;
 }
 
 export interface Product {
@@ -23,6 +30,7 @@ export interface Product {
   iconName: string;
   image: string;
   variants?: ProductVariant[];
+  dimensions?: Dimensions;
 }
 
 export const products: Product[] = [
@@ -39,24 +47,7 @@ export const products: Product[] = [
       "Pengerjaan Cepat"
     ],
     "iconName": "Notebook",
-    "image": "https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&q=80&w=400",
-    "variants": [
-      {
-        "id": "office-new-009",
-        "name": "991",
-        "price": 35000
-      },
-      {
-        "id": "office-new-007",
-        "name": "994",
-        "price": 45000
-      },
-      {
-        "id": "office-new-008",
-        "name": "Double Cover",
-        "price": 60000
-      }
-    ]
+    "image": "https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&q=80&w=400"
   },
   {
     "id": "agenda-memo-kayu-tali-ballpoint",
@@ -71,19 +62,7 @@ export const products: Product[] = [
       "Pengerjaan Cepat"
     ],
     "iconName": "Notebook",
-    "image": "https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&q=80&w=400",
-    "variants": [
-      {
-        "id": "office-new-005",
-        "name": "Standard",
-        "price": 30000
-      },
-      {
-        "id": "office-new-006",
-        "name": "+ Dompet",
-        "price": 32500
-      }
-    ]
+    "image": "https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&q=80&w=400"
   },
   {
     "id": "print-sign-new-010",
@@ -116,18 +95,23 @@ export const products: Product[] = [
     "image": "https://images.unsplash.com/photo-1562577309-4932fdd64cd1?auto=format&fit=crop&q=80&w=400",
     "variants": [
       {
-        "id": "print-sign-new-005",
-        "name": "15cm Custom",
-        "price": 45000
-      },
-      {
         "id": "print-sign-new-006",
         "name": "20x9cm Custom",
+        "dimensions": {
+          "width": 20,
+          "height": 9,
+          "unit": "cm"
+        },
         "price": 36000
       },
       {
         "id": "print-sign-new-004",
         "name": "30x10cm Custom",
+        "dimensions": {
+          "width": 30,
+          "height": 10,
+          "unit": "cm"
+        },
         "price": 60000
       }
     ]
@@ -139,6 +123,11 @@ export const products: Product[] = [
     "description": "Cetak Albatros Meteran berkualitas tinggi. Hasil tajam, awet, dan profesional.",
     "priceSimulated": "Rp 75.000",
     "basePrice": 75000,
+    "dimensions": {
+      "width": 100,
+      "height": 100,
+      "unit": "cm"
+    },
     "features": [
       "Kualitas Terbaik",
       "Harga Kompetitif",
@@ -150,6 +139,11 @@ export const products: Product[] = [
   {
     "id": "print-new-019",
     "name": "Alkasia A3+",
+    "dimensions": {
+      "width": 32.9,
+      "height": 48.3,
+      "unit": "cm"
+    },
     "category": "Jasa Cetak",
     "description": "Cetak Alkasia A3+ berkualitas tinggi. Hasil tajam, awet, dan profesional.",
     "priceSimulated": "Rp 5.000",
@@ -191,22 +185,20 @@ export const products: Product[] = [
     ],
     "iconName": "Mail",
     "image": "https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&q=80&w=400",
-    "variants": [
-      {
-        "id": "office-new-016",
-        "name": "AP150gsm",
-        "price": 4200
-      },
-      {
-        "id": "office-new-015",
-        "name": "HVS 100gsm",
-        "price": 3800
-      }
-    ]
+    "dimensions": {
+      "width": 21.5,
+      "height": 33,
+      "unit": "cm"
+    }
   },
   {
     "id": "office-new-014",
     "name": "Amplop Putih 23x11cm",
+    "dimensions": {
+      "width": 23,
+      "height": 11,
+      "unit": "cm"
+    },
     "category": "Alat Tulis & Kantor",
     "description": "Produk Amplop Putih 23x11cm berkualitas tinggi. Cocok untuk kebutuhan bisnis dan personal.",
     "priceSimulated": "Rp 1.500",
@@ -226,25 +218,18 @@ export const products: Product[] = [
     "description": "Cetak Backlite Indoor Duratrans berkualitas tinggi. Hasil tajam, awet, dan profesional.",
     "priceSimulated": "Mulai Rp 75.000",
     "basePrice": 75000,
+    "dimensions": {
+      "width": 100,
+      "height": 200,
+      "unit": "cm"
+    },
     "features": [
       "Kualitas Terbaik",
       "Harga Kompetitif",
       "Proses Cepat"
     ],
     "iconName": "FileText",
-    "image": "https://images.unsplash.com/photo-1562577309-4932fdd64cd1?auto=format&fit=crop&q=80&w=400",
-    "variants": [
-      {
-        "id": "print-new-033",
-        "name": "Indoor Duratrans",
-        "price": 150000
-      },
-      {
-        "id": "print-new-032",
-        "name": "Outdoor",
-        "price": 75000
-      }
-    ]
+    "image": "https://images.unsplash.com/photo-1562577309-4932fdd64cd1?auto=format&fit=crop&q=80&w=400"
   },
   {
     "id": "promo-new-002",
@@ -264,6 +249,11 @@ export const products: Product[] = [
   {
     "id": "office-new-001",
     "name": "Blocknote A6 - isi 40lembar polos",
+    "dimensions": {
+      "width": 10.5,
+      "height": 14.8,
+      "unit": "cm"
+    },
     "category": "Alat Tulis & Kantor",
     "description": "Produk Blocknote A6 - isi 40lembar polos berkualitas tinggi. Cocok untuk kebutuhan bisnis dan personal.",
     "priceSimulated": "Rp 6.000",
@@ -289,23 +279,16 @@ export const products: Product[] = [
       "Proses Cepat"
     ],
     "iconName": "Notebook",
-    "image": "https://images.unsplash.com/photo-1562577309-4932fdd64cd1?auto=format&fit=crop&q=80&w=400",
-    "variants": [
-      {
-        "id": "print-new-001",
-        "name": "4 PORTRAIT - Isi Artpaper 150 Gsm",
-        "price": 3500
-      },
-      {
-        "id": "print-new-002",
-        "name": "5 - Isi Artpaper 150 Gsm",
-        "price": 2250
-      }
-    ]
+    "image": "https://images.unsplash.com/photo-1562577309-4932fdd64cd1?auto=format&fit=crop&q=80&w=400"
   },
   {
     "id": "brosur-a4",
     "name": "Brosur A4",
+    "dimensions": {
+      "width": 21,
+      "height": 29.7,
+      "unit": "cm"
+    },
     "category": "Jasa Cetak",
     "description": "Produk Brosur A4 Artpaper 150 gsm Kilat berkualitas tinggi. Cocok untuk kebutuhan bisnis dan personal.",
     "priceSimulated": "Mulai Rp 750.000",
@@ -316,23 +299,16 @@ export const products: Product[] = [
       "Pengerjaan Cepat"
     ],
     "iconName": "FileText",
-    "image": "https://images.unsplash.com/photo-1562577309-4932fdd64cd1?auto=format&fit=crop&q=80&w=400",
-    "variants": [
-      {
-        "id": "print-sign-new-026",
-        "name": "Artpaper 150 gsm Kilat",
-        "price": 875000
-      },
-      {
-        "id": "print-sign-new-025",
-        "name": "HVS 80 gsm Kilat",
-        "price": 750000
-      }
-    ]
+    "image": "https://images.unsplash.com/photo-1562577309-4932fdd64cd1?auto=format&fit=crop&q=80&w=400"
   },
   {
     "id": "brosur-bifold-a5",
     "name": "Brosur Bifold A5",
+    "dimensions": {
+      "width": 14.8,
+      "height": 21,
+      "unit": "cm"
+    },
     "category": "Jasa Cetak",
     "description": "Produk Brosur Bifold A5 - Artpaper 150 berkualitas terbaik. Solusi cetak profesional untuk Anda.",
     "priceSimulated": "Mulai Rp 2.000",
@@ -343,23 +319,16 @@ export const products: Product[] = [
       "Pengerjaan Rapi"
     ],
     "iconName": "FileText",
-    "image": "https://images.unsplash.com/photo-1562577309-4932fdd64cd1?auto=format&fit=crop&q=80&w=400",
-    "variants": [
-      {
-        "id": "flyer-brosur-new-007",
-        "name": "Artpaper 150",
-        "price": 3000
-      },
-      {
-        "id": "flyer-brosur-new-008",
-        "name": "HVS 80gsm",
-        "price": 2000
-      }
-    ]
+    "image": "https://images.unsplash.com/photo-1562577309-4932fdd64cd1?auto=format&fit=crop&q=80&w=400"
   },
   {
     "id": "brosur-trifold-a4",
     "name": "Brosur Trifold A4",
+    "dimensions": {
+      "width": 21,
+      "height": 29.7,
+      "unit": "cm"
+    },
     "category": "Jasa Cetak",
     "description": "Produk Brosur Trifold A4 - Artpaper 150 berkualitas terbaik. Solusi cetak profesional untuk Anda.",
     "priceSimulated": "Mulai Rp 2.000",
@@ -370,19 +339,7 @@ export const products: Product[] = [
       "Pengerjaan Rapi"
     ],
     "iconName": "FileText",
-    "image": "https://images.unsplash.com/photo-1562577309-4932fdd64cd1?auto=format&fit=crop&q=80&w=400",
-    "variants": [
-      {
-        "id": "flyer-brosur-new-005",
-        "name": "Artpaper 150",
-        "price": 3000
-      },
-      {
-        "id": "flyer-brosur-new-006",
-        "name": "HVS 80gsm",
-        "price": 2000
-      }
-    ]
+    "image": "https://images.unsplash.com/photo-1562577309-4932fdd64cd1?auto=format&fit=crop&q=80&w=400"
   },
   {
     "id": "print-new-047",
@@ -391,6 +348,11 @@ export const products: Product[] = [
     "description": "Cetak Canvas Glossy M2 berkualitas tinggi. Hasil tajam, awet, dan profesional.",
     "priceSimulated": "Rp 200.000",
     "basePrice": 200000,
+    "dimensions": {
+      "width": 100,
+      "height": 100,
+      "unit": "cm"
+    },
     "features": [
       "Kualitas Terbaik",
       "Harga Kompetitif",
@@ -415,23 +377,13 @@ export const products: Product[] = [
     "image": "https://images.unsplash.com/photo-1513201099705-a9746e1e201f?auto=format&fit=crop&q=80&w=400",
     "variants": [
       {
-        "id": "frame-new-002",
-        "name": "12R",
-        "price": 46000
-      },
-      {
-        "id": "frame-new-003",
-        "name": "16R",
-        "price": 125000
-      },
-      {
-        "id": "frame-new-004",
-        "name": "24R",
-        "price": 230000
-      },
-      {
         "id": "frame-new-001",
-        "name": "8R",
+        "name": "20.3x25.4cm",
+        "dimensions": {
+          "width": 20.3,
+          "height": 25.4,
+          "unit": "cm"
+        },
         "price": 28500
       }
     ]
@@ -443,6 +395,11 @@ export const products: Product[] = [
     "description": "Cetak Constellation ST 280g berkualitas tinggi. Hasil tajam, awet, dan profesional.",
     "priceSimulated": "Rp 10.000",
     "basePrice": 10000,
+    "dimensions": {
+      "width": 32.9,
+      "height": 48.3,
+      "unit": "cm"
+    },
     "features": [
       "Kualitas Terbaik",
       "Harga Kompetitif",
@@ -454,6 +411,11 @@ export const products: Product[] = [
   {
     "id": "flyer-brosur-new-002",
     "name": "Flyer 10x21 cm - Ap150gsm",
+    "dimensions": {
+      "width": 10,
+      "height": 21,
+      "unit": "cm"
+    },
     "category": "Jasa Cetak",
     "description": "Produk Flyer 10x21 cm - Ap150gsm berkualitas terbaik. Solusi cetak profesional untuk Anda.",
     "priceSimulated": "Rp 850",
@@ -469,6 +431,11 @@ export const products: Product[] = [
   {
     "id": "flyer-brosur-new-001",
     "name": "Flyer 9x20cm - HVS Kilat",
+    "dimensions": {
+      "width": 9,
+      "height": 20,
+      "unit": "cm"
+    },
     "category": "Jasa Cetak",
     "description": "Produk Flyer 9x20cm - HVS Kilat berkualitas terbaik. Solusi cetak profesional untuk Anda.",
     "priceSimulated": "Rp 250.000",
@@ -484,6 +451,11 @@ export const products: Product[] = [
   {
     "id": "flyer-a5-artpaper",
     "name": "Flyer A5 Artpaper",
+    "dimensions": {
+      "width": 14.8,
+      "height": 21,
+      "unit": "cm"
+    },
     "category": "Jasa Cetak",
     "description": "Produk Flyer A5 Artpaper 150 gsm Kilat berkualitas terbaik. Solusi cetak profesional untuk Anda.",
     "priceSimulated": "Mulai Rp 450.000",
@@ -494,19 +466,7 @@ export const products: Product[] = [
       "Pengerjaan Rapi"
     ],
     "iconName": "FileText",
-    "image": "https://images.unsplash.com/photo-1562577309-4932fdd64cd1?auto=format&fit=crop&q=80&w=400",
-    "variants": [
-      {
-        "id": "flyer-brosur-new-003",
-        "name": "150 gsm Kilat",
-        "price": 450000
-      },
-      {
-        "id": "flyer-brosur-new-004",
-        "name": "260 gsm Kilat",
-        "price": 500000
-      }
-    ]
+    "image": "https://images.unsplash.com/photo-1562577309-4932fdd64cd1?auto=format&fit=crop&q=80&w=400"
   },
   {
     "id": "print-new-045",
@@ -540,23 +500,43 @@ export const products: Product[] = [
     "variants": [
       {
         "id": "print-new-040",
-        "name": "2",
-        "price": 300000
+        "name": "A2",
+        "price": 300000,
+        "dimensions": {
+          "width": 42,
+          "height": 59.4,
+          "unit": "cm"
+        }
       },
       {
         "id": "print-new-039",
-        "name": "3",
-        "price": 160000
+        "name": "A3",
+        "price": 160000,
+        "dimensions": {
+          "width": 29.7,
+          "height": 42,
+          "unit": "cm"
+        }
       },
       {
         "id": "print-new-038",
-        "name": "4",
-        "price": 100000
+        "name": "A4",
+        "price": 100000,
+        "dimensions": {
+          "width": 21,
+          "height": 29.7,
+          "unit": "cm"
+        }
       },
       {
         "id": "print-new-037",
-        "name": "5",
-        "price": 80000
+        "name": "A5",
+        "price": 80000,
+        "dimensions": {
+          "width": 14.8,
+          "height": 21,
+          "unit": "cm"
+        }
       }
     ]
   },
@@ -567,6 +547,11 @@ export const products: Product[] = [
     "description": "Cetak Frontlite Jerman berkualitas tinggi. Hasil tajam, awet, dan profesional.",
     "priceSimulated": "Rp 75.000",
     "basePrice": 75000,
+    "dimensions": {
+      "width": 100,
+      "height": 300,
+      "unit": "cm"
+    },
     "features": [
       "Kualitas Terbaik",
       "Harga Kompetitif",
@@ -618,29 +603,7 @@ export const products: Product[] = [
       "Proses Cepat"
     ],
     "iconName": "Key",
-    "image": "https://images.unsplash.com/photo-1513201099705-a9746e1e201f?auto=format&fit=crop&q=80&w=400",
-    "variants": [
-      {
-        "id": "merch-new-012",
-        "name": "Akrilik 1 Sisi",
-        "price": 400
-      },
-      {
-        "id": "merch-new-011",
-        "name": "Akrilik 2Sisi",
-        "price": 400
-      },
-      {
-        "id": "merch-new-008",
-        "name": "Akrilik Grafir",
-        "price": 300
-      },
-      {
-        "id": "merch-new-001",
-        "name": "Pembuka Botol",
-        "price": 4500
-      }
-    ]
+    "image": "https://images.unsplash.com/photo-1513201099705-a9746e1e201f?auto=format&fit=crop&q=80&w=400"
   },
   {
     "id": "gelang-tiket-lanyard",
@@ -655,19 +618,7 @@ export const products: Product[] = [
       "Pengerjaan Cepat"
     ],
     "iconName": "Tag",
-    "image": "https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&q=80&w=400",
-    "variants": [
-      {
-        "id": "promo-new-027",
-        "name": "Pita Satin",
-        "price": 5000
-      },
-      {
-        "id": "promo-new-026",
-        "name": "Tissue",
-        "price": 7500
-      }
-    ]
+    "image": "https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&q=80&w=400"
   },
   {
     "id": "promo-002",
@@ -697,19 +648,7 @@ export const products: Product[] = [
       "Proses Cepat"
     ],
     "iconName": "Gift",
-    "image": "https://images.unsplash.com/photo-1513201099705-a9746e1e201f?auto=format&fit=crop&q=80&w=400",
-    "variants": [
-      {
-        "id": "merch-new-009",
-        "name": "Grafir",
-        "price": 5000
-      },
-      {
-        "id": "merch-new-010",
-        "name": "Print UV",
-        "price": 20000
-      }
-    ]
+    "image": "https://images.unsplash.com/photo-1513201099705-a9746e1e201f?auto=format&fit=crop&q=80&w=400"
   },
   {
     "id": "hang-tag",
@@ -724,23 +663,16 @@ export const products: Product[] = [
       "Pengerjaan Cepat"
     ],
     "iconName": "Tag",
-    "image": "https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&q=80&w=400",
-    "variants": [
-      {
-        "id": "promo-new-005",
-        "name": "Bulat",
-        "price": 920
-      },
-      {
-        "id": "promo-new-006",
-        "name": "Kotak Laminasi",
-        "price": 32000
-      }
-    ]
+    "image": "https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&q=80&w=400"
   },
   {
     "id": "print-new-022",
     "name": "HVS 100gsm COLOR A3+",
+    "dimensions": {
+      "width": 32.9,
+      "height": 48.3,
+      "unit": "cm"
+    },
     "category": "Jasa Cetak",
     "description": "Cetak HVS 100gsm COLOR A3+ berkualitas tinggi. Hasil tajam, awet, dan profesional.",
     "priceSimulated": "Rp 2.500",
@@ -771,18 +703,33 @@ export const products: Product[] = [
       {
         "id": "print-new-026",
         "name": "A4",
+        "dimensions": {
+          "width": 21,
+          "height": 29.7,
+          "unit": "cm"
+        },
         "price": 1500
       },
       {
         "id": "print-new-025",
         "name": "F4",
-        "price": 2000
+        "price": 2000,
+        "dimensions": {
+          "width": 21.5,
+          "height": 33,
+          "unit": "cm"
+        }
       }
     ]
   },
   {
     "id": "promo-new-003",
     "name": "ID Card Akrilik Yoyo",
+    "dimensions": {
+      "width": 8.56,
+      "height": 5.4,
+      "unit": "cm"
+    },
     "category": "Promosi & Event",
     "description": "Produk ID Card Akrilik Yoyo berkualitas tinggi. Cocok untuk kebutuhan bisnis dan personal.",
     "priceSimulated": "Rp 20.000",
@@ -823,39 +770,7 @@ export const products: Product[] = [
       "Proses Cepat"
     ],
     "iconName": "Notebook",
-    "image": "https://images.unsplash.com/photo-1562577309-4932fdd64cd1?auto=format&fit=crop&q=80&w=400",
-    "variants": [
-      {
-        "id": "print-new-007",
-        "name": "3 - Isi Artpaper 150 Gsm",
-        "price": 12000
-      },
-      {
-        "id": "print-new-008",
-        "name": "3 - Isi Artpaper 260 Gsm",
-        "price": 12000
-      },
-      {
-        "id": "print-new-005",
-        "name": "3 - Isi HVS 80 Gsm BW",
-        "price": 8000
-      },
-      {
-        "id": "print-new-004",
-        "name": "4 - Isi Artpaper 150 Gsm",
-        "price": 9500
-      },
-      {
-        "id": "print-new-003",
-        "name": "4 - Isi Artpaper 260 Gsm",
-        "price": 9500
-      },
-      {
-        "id": "print-new-006",
-        "name": "4 - Isi HVS 80 Gsm BW",
-        "price": 7300
-      }
-    ]
+    "image": "https://images.unsplash.com/photo-1562577309-4932fdd64cd1?auto=format&fit=crop&q=80&w=400"
   },
   {
     "id": "textile-new-008",
@@ -864,6 +779,11 @@ export const products: Product[] = [
     "description": "Produk Kain Canvas Polyester berkualitas terbaik. Solusi cetak profesional untuk Anda.",
     "priceSimulated": "Rp 65.000",
     "basePrice": 65000,
+    "dimensions": {
+      "width": 100,
+      "height": 100,
+      "unit": "cm"
+    },
     "features": [
       "Kualitas Terjamin",
       "Harga Bersaing",
@@ -879,25 +799,18 @@ export const products: Product[] = [
     "description": "Produk Kain Jersey Brazil berkualitas terbaik. Solusi cetak profesional untuk Anda.",
     "priceSimulated": "Mulai Rp 65.000",
     "basePrice": 65000,
+    "dimensions": {
+      "width": 100,
+      "height": 100,
+      "unit": "cm"
+    },
     "features": [
       "Kualitas Terjamin",
       "Harga Bersaing",
       "Pengerjaan Rapi"
     ],
     "iconName": "Shirt",
-    "image": "https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&q=80&w=400",
-    "variants": [
-      {
-        "id": "textile-new-009",
-        "name": "Brazil",
-        "price": 65000
-      },
-      {
-        "id": "textile-new-007",
-        "name": "Milano",
-        "price": 65000
-      }
-    ]
+    "image": "https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&q=80&w=400"
   },
   {
     "id": "textile-new-006",
@@ -906,6 +819,11 @@ export const products: Product[] = [
     "description": "Produk Kain Voal Ultrafine berkualitas terbaik. Solusi cetak profesional untuk Anda.",
     "priceSimulated": "Rp 65.000",
     "basePrice": 65000,
+    "dimensions": {
+      "width": 110,
+      "height": 110,
+      "unit": "cm"
+    },
     "features": [
       "Kualitas Terjamin",
       "Harga Bersaing",
@@ -927,19 +845,7 @@ export const products: Product[] = [
       "Tersedia Berbagai Ukuran"
     ],
     "iconName": "CalendarDays",
-    "image": "https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&q=80&w=400",
-    "variants": [
-      {
-        "id": "atk-003",
-        "name": "inding",
-        "price": 10000
-      },
-      {
-        "id": "atk-002",
-        "name": "uduk Mini",
-        "price": 12000
-      }
-    ]
+    "image": "https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&q=80&w=400"
   },
   {
     "id": "kalender",
@@ -957,55 +863,45 @@ export const products: Product[] = [
     "image": "https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&q=80&w=400",
     "variants": [
       {
-        "id": "promo-new-016",
-        "name": "Dinding 12 hal AP 260",
-        "price": 65000
-      },
-      {
-        "id": "promo-new-019",
-        "name": "Dinding 3 hal AP 260",
-        "price": 20000
-      },
-      {
-        "id": "promo-new-018",
-        "name": "Dinding 4 Hal AP 260",
-        "price": 25000
-      },
-      {
-        "id": "promo-new-021",
-        "name": "Dinding 5 Hal AP 260",
-        "price": 30000
-      },
-      {
-        "id": "promo-new-017",
-        "name": "Dinding 6 Hal AP 260",
-        "price": 35000
-      },
-      {
         "id": "promo-new-022",
         "name": "Dinding A3 Lembaran",
+        "dimensions": {
+          "width": 29.7,
+          "height": 42,
+          "unit": "cm"
+        },
         "price": 5000
       },
       {
         "id": "promo-new-024",
         "name": "Meja A5 - AP260",
+        "dimensions": {
+          "width": 14.8,
+          "height": 21,
+          "unit": "cm"
+        },
         "price": 25000
       },
       {
         "id": "promo-new-023",
         "name": "Meja A6 - AP260",
+        "dimensions": {
+          "width": 10.5,
+          "height": 14.8,
+          "unit": "cm"
+        },
         "price": 15000
-      },
-      {
-        "id": "promo-new-020",
-        "name": "Meja Hardcover A5 - AP260",
-        "price": 55000
       }
     ]
   },
   {
     "id": "kalkir-a3",
     "name": "Kalkir A3",
+    "dimensions": {
+      "width": 29.7,
+      "height": 42,
+      "unit": "cm"
+    },
     "category": "Jasa Cetak",
     "description": "Cetak Kalkir A3 BW berkualitas tinggi. Hasil tajam, awet, dan profesional.",
     "priceSimulated": "Mulai Rp 3.000",
@@ -1016,23 +912,16 @@ export const products: Product[] = [
       "Proses Cepat"
     ],
     "iconName": "FileText",
-    "image": "https://images.unsplash.com/photo-1562577309-4932fdd64cd1?auto=format&fit=crop&q=80&w=400",
-    "variants": [
-      {
-        "id": "print-new-013",
-        "name": "BW",
-        "price": 3000
-      },
-      {
-        "id": "print-new-010",
-        "name": "Warna",
-        "price": 5000
-      }
-    ]
+    "image": "https://images.unsplash.com/photo-1562577309-4932fdd64cd1?auto=format&fit=crop&q=80&w=400"
   },
   {
     "id": "print-new-014",
     "name": "Kalkir A4 BW",
+    "dimensions": {
+      "width": 21,
+      "height": 29.7,
+      "unit": "cm"
+    },
     "category": "Jasa Cetak",
     "description": "Cetak Kalkir A4 BW berkualitas tinggi. Hasil tajam, awet, dan profesional.",
     "priceSimulated": "Rp 1.000",
@@ -1063,6 +952,11 @@ export const products: Product[] = [
   {
     "id": "kartu-nama",
     "name": "Kartu Nama",
+    "dimensions": {
+      "width": 9,
+      "height": 5.5,
+      "unit": "cm"
+    },
     "category": "Jasa Cetak",
     "description": "Cetak Kartu Nama  Rounded TIK Paper berkualitas tinggi. Hasil tajam, awet, dan profesional.",
     "priceSimulated": "Mulai Rp 20.000",
@@ -1073,94 +967,7 @@ export const products: Product[] = [
       "Proses Cepat"
     ],
     "iconName": "CreditCard",
-    "image": "https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&q=80&w=400",
-    "variants": [
-      {
-        "id": "card-new-015",
-        "name": "Rounded TIK Paper",
-        "price": 55000
-      },
-      {
-        "id": "card-new-011",
-        "name": "Alkasia",
-        "price": 30000
-      },
-      {
-        "id": "card-new-002",
-        "name": "AP 310",
-        "price": 40000
-      },
-      {
-        "id": "card-new-003",
-        "name": "AP 310 Laminasi",
-        "price": 50000
-      },
-      {
-        "id": "card-new-008",
-        "name": "AP260  Tanpa Laminasi",
-        "price": 20000
-      },
-      {
-        "id": "card-new-016",
-        "name": "AP260 + Spot UV",
-        "price": 100000
-      },
-      {
-        "id": "card-new-001",
-        "name": "AP260 Laminasi",
-        "price": 25000
-      },
-      {
-        "id": "print-003",
-        "name": "Bisnis",
-        "price": 25000
-      },
-      {
-        "id": "card-new-005",
-        "name": "Concorde Putih",
-        "price": 30000
-      },
-      {
-        "id": "card-new-004",
-        "name": "Linen",
-        "price": 30000
-      },
-      {
-        "id": "card-new-006",
-        "name": "Rounded AP 260",
-        "price": 55000
-      },
-      {
-        "id": "card-new-013",
-        "name": "Rounded AP 310",
-        "price": 60000
-      },
-      {
-        "id": "card-new-007",
-        "name": "Rounded AP260 Laminasi",
-        "price": 70000
-      },
-      {
-        "id": "card-new-014",
-        "name": "Rounded AP310 Laminasi",
-        "price": 85000
-      },
-      {
-        "id": "card-new-009",
-        "name": "Rounded Jasmine",
-        "price": 55000
-      },
-      {
-        "id": "card-new-010",
-        "name": "TIK Paper",
-        "price": 30000
-      },
-      {
-        "id": "card-new-012",
-        "name": "Transparant Doff",
-        "price": 150000
-      }
-    ]
+    "image": "https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&q=80&w=400"
   },
   {
     "id": "promo-001",
@@ -1225,6 +1032,11 @@ export const products: Product[] = [
   {
     "id": "print-new-018",
     "name": "Linen  A3+",
+    "dimensions": {
+      "width": 32.9,
+      "height": 48.3,
+      "unit": "cm"
+    },
     "category": "Jasa Cetak",
     "description": "Cetak Linen  A3+ berkualitas tinggi. Hasil tajam, awet, dan profesional.",
     "priceSimulated": "Rp 5.000",
@@ -1250,19 +1062,7 @@ export const products: Product[] = [
       "Proses Cepat"
     ],
     "iconName": "Package",
-    "image": "https://images.unsplash.com/photo-1562577309-4932fdd64cd1?auto=format&fit=crop&q=80&w=400",
-    "variants": [
-      {
-        "id": "print-new-042",
-        "name": "Pakai Laminasi Dalam",
-        "price": 2935
-      },
-      {
-        "id": "print-new-041",
-        "name": "Tanpa Laminasi",
-        "price": 2215
-      }
-    ]
+    "image": "https://images.unsplash.com/photo-1562577309-4932fdd64cd1?auto=format&fit=crop&q=80&w=400"
   },
   {
     "id": "print-new-035",
@@ -1292,23 +1092,16 @@ export const products: Product[] = [
       "Proses Cepat"
     ],
     "iconName": "Gift",
-    "image": "https://images.unsplash.com/photo-1513201099705-a9746e1e201f?auto=format&fit=crop&q=80&w=400",
-    "variants": [
-      {
-        "id": "merch-new-006",
-        "name": "Standard",
-        "price": 20000
-      },
-      {
-        "id": "merch-new-007",
-        "name": "Custom Tali",
-        "price": 35000
-      }
-    ]
+    "image": "https://images.unsplash.com/photo-1513201099705-a9746e1e201f?auto=format&fit=crop&q=80&w=400"
   },
   {
     "id": "print-sign-new-013",
     "name": "Menu A3 AP260 - Laminating",
+    "dimensions": {
+      "width": 29.7,
+      "height": 42,
+      "unit": "cm"
+    },
     "category": "Jasa Cetak",
     "description": "Produk Menu A3 AP260 - Laminating berkualitas tinggi. Cocok untuk kebutuhan bisnis dan personal.",
     "priceSimulated": "Rp 10.000",
@@ -1324,6 +1117,11 @@ export const products: Product[] = [
   {
     "id": "print-sign-new-012",
     "name": "Menu A4 AP260 - Laminating",
+    "dimensions": {
+      "width": 21,
+      "height": 29.7,
+      "unit": "cm"
+    },
     "category": "Jasa Cetak",
     "description": "Produk Menu A4 AP260 - Laminating berkualitas tinggi. Cocok untuk kebutuhan bisnis dan personal.",
     "priceSimulated": "Rp 5.000",
@@ -1339,6 +1137,11 @@ export const products: Product[] = [
   {
     "id": "print-sign-new-014",
     "name": "Menu A4 HVS 80 - Laminating",
+    "dimensions": {
+      "width": 21,
+      "height": 29.7,
+      "unit": "cm"
+    },
     "category": "Jasa Cetak",
     "description": "Produk Menu A4 HVS 80 - Laminating berkualitas tinggi. Cocok untuk kebutuhan bisnis dan personal.",
     "priceSimulated": "Rp 4.500",
@@ -1354,6 +1157,11 @@ export const products: Product[] = [
   {
     "id": "Flag-024",
     "name": "Mini X banner 25x40cm",
+    "dimensions": {
+      "width": 25,
+      "height": 40,
+      "unit": "cm"
+    },
     "category": "Promosi & Event",
     "description": "Cetak Mini X banner 25x40cm berkualitas tinggi. Hasil tajam, awet, dan profesional.",
     "priceSimulated": "Rp 35.000",
@@ -1384,6 +1192,11 @@ export const products: Product[] = [
   {
     "id": "merch-new-003",
     "name": "Mug Bunglon",
+    "dimensions": {
+      "width": 8,
+      "height": 9.5,
+      "unit": "cm"
+    },
     "category": "Merchandise",
     "description": "Cetak Mug Bunglon berkualitas tinggi. Hasil tajam, awet, dan profesional.",
     "priceSimulated": "Rp 45.000",
@@ -1399,6 +1212,11 @@ export const products: Product[] = [
   {
     "id": "merch-001",
     "name": "Mug Custom Sublim",
+    "dimensions": {
+      "width": 8,
+      "height": 9.5,
+      "unit": "cm"
+    },
     "category": "Merchandise",
     "description": "Nikmati kopi pagi dengan mug personal atau berikan hadiah yang tak terlupakan. Cetakan sublimasi menyatu dengan keramik, tahan lama dan aman dicuci.",
     "priceSimulated": "Rp 25.000",
@@ -1414,6 +1232,11 @@ export const products: Product[] = [
   {
     "id": "merch-new-002",
     "name": "Mug Putih Sublim",
+    "dimensions": {
+      "width": 8,
+      "height": 9.5,
+      "unit": "cm"
+    },
     "category": "Merchandise",
     "description": "Cetak Mug Putih Sublim berkualitas tinggi. Hasil tajam, awet, dan profesional.",
     "priceSimulated": "Rp 17.500",
@@ -1469,49 +1292,7 @@ export const products: Product[] = [
       "Pengerjaan Cepat"
     ],
     "iconName": "Notebook",
-    "image": "https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&q=80&w=400",
-    "variants": [
-      {
-        "id": "office-new-020",
-        "name": "4 2Ply Cetak BW",
-        "price": 350000
-      },
-      {
-        "id": "office-new-022",
-        "name": "4 2Ply Cetak BW + nomerator",
-        "price": 420000
-      },
-      {
-        "id": "office-new-021",
-        "name": "4 3Ply Cetak BW",
-        "price": 400000
-      },
-      {
-        "id": "office-new-023",
-        "name": "4 3Ply Cetak BW+nomerator",
-        "price": 450000
-      },
-      {
-        "id": "office-new-025",
-        "name": "4 3Ply Cetak Warna",
-        "price": 600000
-      },
-      {
-        "id": "office-new-024",
-        "name": "4 3Ply Cetak Warna+nomerator",
-        "price": 675000
-      },
-      {
-        "id": "office-new-019",
-        "name": "5 2Ply Cetak BW",
-        "price": 19500
-      },
-      {
-        "id": "office-new-018",
-        "name": "6 2Ply Cetak 1 warna",
-        "price": 7900
-      }
-    ]
+    "image": "https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&q=80&w=400"
   },
   {
     "id": "notebook",
@@ -1526,28 +1307,16 @@ export const products: Product[] = [
       "Pengerjaan Cepat"
     ],
     "iconName": "Notebook",
-    "image": "https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&q=80&w=400",
-    "variants": [
-      {
-        "id": "office-new-003",
-        "name": "Hardcover Bergaris - isi 100lembar",
-        "price": 55000
-      },
-      {
-        "id": "office-new-002",
-        "name": "Hardcover Polos - isi 100 lembar",
-        "price": 43500
-      },
-      {
-        "id": "office-new-004",
-        "name": "Softcover Polos - isi 100 lembar",
-        "price": 37500
-      }
-    ]
+    "image": "https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&q=80&w=400"
   },
   {
     "id": "atk-001",
     "name": "Notes A5 Custom",
+    "dimensions": {
+      "width": 14.8,
+      "height": 21,
+      "unit": "cm"
+    },
     "category": "Alat Tulis & Kantor",
     "description": "Buku catatan profesional untuk seminar atau kebutuhan kantor. Desain cover custom mencerminkan identitas perusahaan Anda.",
     "priceSimulated": "Mulai Rp 15.000",
@@ -1593,11 +1362,21 @@ export const products: Product[] = [
       {
         "id": "flyer-brosur-new-009",
         "name": "30x4cm",
+        "dimensions": {
+          "width": 30,
+          "height": 4,
+          "unit": "cm"
+        },
         "price": 600
       },
       {
         "id": "flyer-brosur-new-010",
         "name": "43x7cm",
+        "dimensions": {
+          "width": 43,
+          "height": 7,
+          "unit": "cm"
+        },
         "price": 1250
       }
     ]
@@ -1620,6 +1399,11 @@ export const products: Product[] = [
   {
     "id": "merch-new-016",
     "name": "Photo Akrilik 4R",
+    "dimensions": {
+      "width": 10.2,
+      "height": 15.2,
+      "unit": "cm"
+    },
     "category": "Merchandise",
     "description": "Cetak Photo Akrilik 4R berkualitas tinggi. Hasil tajam, awet, dan profesional.",
     "priceSimulated": "Rp 65.000",
@@ -1660,23 +1444,16 @@ export const products: Product[] = [
       "Proses Cepat"
     ],
     "iconName": "FileText",
-    "image": "https://images.unsplash.com/photo-1562577309-4932fdd64cd1?auto=format&fit=crop&q=80&w=400",
-    "variants": [
-      {
-        "id": "print-new-024",
-        "name": "115 gsm",
-        "price": 10000
-      },
-      {
-        "id": "print-new-023",
-        "name": "275 gsm",
-        "price": 15000
-      }
-    ]
+    "image": "https://images.unsplash.com/photo-1562577309-4932fdd64cd1?auto=format&fit=crop&q=80&w=400"
   },
   {
     "id": "poster-a3-plus-art",
     "name": "Poster A3 plus Art",
+    "dimensions": {
+      "width": 29.7,
+      "height": 42,
+      "unit": "cm"
+    },
     "category": "Jasa Cetak",
     "description": "Produk Poster A3 plus Art Carton 260 gsm berkualitas tinggi. Cocok untuk kebutuhan bisnis dan personal.",
     "priceSimulated": "Mulai Rp 5.000",
@@ -1687,19 +1464,7 @@ export const products: Product[] = [
       "Pengerjaan Cepat"
     ],
     "iconName": "Image",
-    "image": "https://images.unsplash.com/photo-1562577309-4932fdd64cd1?auto=format&fit=crop&q=80&w=400",
-    "variants": [
-      {
-        "id": "print-sign-new-022",
-        "name": "Carton 260 gsm",
-        "price": 5000
-      },
-      {
-        "id": "print-sign-new-021",
-        "name": "Paper 150 gsm",
-        "price": 5000
-      }
-    ]
+    "image": "https://images.unsplash.com/photo-1562577309-4932fdd64cd1?auto=format&fit=crop&q=80&w=400"
   },
   {
     "id": "poster-albatros-a",
@@ -1714,24 +1479,7 @@ export const products: Product[] = [
       "Pengerjaan Cepat"
     ],
     "iconName": "Image",
-    "image": "https://images.unsplash.com/photo-1562577309-4932fdd64cd1?auto=format&fit=crop&q=80&w=400",
-    "variants": [
-      {
-        "id": "print-sign-new-019",
-        "name": "0",
-        "price": 75000
-      },
-      {
-        "id": "print-sign-new-017",
-        "name": "1",
-        "price": 60000
-      },
-      {
-        "id": "print-sign-new-015",
-        "name": "2",
-        "price": 40000
-      }
-    ]
+    "image": "https://images.unsplash.com/photo-1562577309-4932fdd64cd1?auto=format&fit=crop&q=80&w=400"
   },
   {
     "id": "poster-luster-a",
@@ -1746,24 +1494,7 @@ export const products: Product[] = [
       "Pengerjaan Cepat"
     ],
     "iconName": "Image",
-    "image": "https://images.unsplash.com/photo-1562577309-4932fdd64cd1?auto=format&fit=crop&q=80&w=400",
-    "variants": [
-      {
-        "id": "print-sign-new-020",
-        "name": "0",
-        "price": 75000
-      },
-      {
-        "id": "print-sign-new-018",
-        "name": "1",
-        "price": 60000
-      },
-      {
-        "id": "print-sign-new-016",
-        "name": "2",
-        "price": 40000
-      }
-    ]
+    "image": "https://images.unsplash.com/photo-1562577309-4932fdd64cd1?auto=format&fit=crop&q=80&w=400"
   },
   {
     "id": "print-akrilik-bening",
@@ -1783,47 +1514,32 @@ export const products: Product[] = [
       {
         "id": "print-new-055",
         "name": "10 mm A3",
+        "dimensions": {
+          "width": 29.7,
+          "height": 42,
+          "unit": "cm"
+        },
         "price": 300000
       },
       {
         "id": "print-new-051",
         "name": "10 mm A4",
+        "dimensions": {
+          "width": 21,
+          "height": 29.7,
+          "unit": "cm"
+        },
         "price": 200000
-      },
-      {
-        "id": "print-new-052",
-        "name": "2 mm A3",
-        "price": 150000
-      },
-      {
-        "id": "print-new-048",
-        "name": "2 mm A4",
-        "price": 90000
       },
       {
         "id": "print-new-056",
         "name": "3 mm A2",
-        "price": 350000
-      },
-      {
-        "id": "print-new-053",
-        "name": "3 mm A3",
-        "price": 170000
-      },
-      {
-        "id": "print-new-049",
-        "name": "3 mm A4",
-        "price": 100000
-      },
-      {
-        "id": "print-new-054",
-        "name": "5 mm A3",
-        "price": 200000
-      },
-      {
-        "id": "print-new-050",
-        "name": "5 mm A4",
-        "price": 150000
+        "price": 350000,
+        "dimensions": {
+          "width": 42,
+          "height": 59.4,
+          "unit": "cm"
+        }
       }
     ]
   },
@@ -1855,43 +1571,16 @@ export const products: Product[] = [
       "Proses Cepat"
     ],
     "iconName": "FileText",
-    "image": "https://images.unsplash.com/photo-1562577309-4932fdd64cd1?auto=format&fit=crop&q=80&w=400",
-    "variants": [
-      {
-        "id": "print-new-012",
-        "name": "0  Hitam Putih",
-        "price": 20000
-      },
-      {
-        "id": "print-new-015",
-        "name": "0 Warna",
-        "price": 65000
-      },
-      {
-        "id": "print-new-011",
-        "name": "1  Hitam Putih",
-        "price": 15000
-      },
-      {
-        "id": "print-new-016",
-        "name": "1 Warna",
-        "price": 45000
-      },
-      {
-        "id": "print-new-009",
-        "name": "2 Hitam Putih",
-        "price": 10000
-      },
-      {
-        "id": "print-new-017",
-        "name": "2 Warna",
-        "price": 25000
-      }
-    ]
+    "image": "https://images.unsplash.com/photo-1562577309-4932fdd64cd1?auto=format&fit=crop&q=80&w=400"
   },
   {
     "id": "merch-new-017",
     "name": "Print Kaos DTF A4 -A5 LENGAN PANJANG",
+    "dimensions": {
+      "width": 21,
+      "height": 29.7,
+      "unit": "cm"
+    },
     "category": "Promosi & Event",
     "description": "Cetak Print Kaos DTF A4 -A5 LENGAN PANJANG berkualitas tinggi. Hasil tajam, awet, dan profesional.",
     "priceSimulated": "Rp 85.000",
@@ -1917,34 +1606,7 @@ export const products: Product[] = [
       "Pengerjaan Cepat"
     ],
     "iconName": "Image",
-    "image": "https://images.unsplash.com/photo-1562577309-4932fdd64cd1?auto=format&fit=crop&q=80&w=400",
-    "variants": [
-      {
-        "id": "print-sign-new-007",
-        "name": "10mm Transparan",
-        "price": 900
-      },
-      {
-        "id": "print-sign-new-008",
-        "name": "10mm Warna",
-        "price": 1000
-      },
-      {
-        "id": "print-sign-new-009",
-        "name": "2mm Bening",
-        "price": 300
-      },
-      {
-        "id": "print-sign-new-003",
-        "name": "3mm Transparant",
-        "price": 400
-      },
-      {
-        "id": "print-sign-new-002",
-        "name": "3mm Warna",
-        "price": 500
-      }
-    ]
+    "image": "https://images.unsplash.com/photo-1562577309-4932fdd64cd1?auto=format&fit=crop&q=80&w=400"
   },
   {
     "id": "office-new-011",
@@ -1974,19 +1636,7 @@ export const products: Product[] = [
       "Pengerjaan Cepat"
     ],
     "iconName": "FileText",
-    "image": "https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&q=80&w=400",
-    "variants": [
-      {
-        "id": "office-new-010",
-        "name": "be",
-        "price": 5500
-      },
-      {
-        "id": "office-new-013",
-        "name": "rinex Kotak",
-        "price": 5000
-      }
-    ]
+    "image": "https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&q=80&w=400"
   },
   {
     "id": "office-new-012",
@@ -2006,6 +1656,11 @@ export const products: Product[] = [
   {
     "id": "print-sign-new-011",
     "name": "Puzzle Akrilik 20x14cm",
+    "dimensions": {
+      "width": 20,
+      "height": 14,
+      "unit": "cm"
+    },
     "category": "Jasa Cetak",
     "description": "Produk Puzzle Akrilik 20x14cm berkualitas tinggi. Cocok untuk kebutuhan bisnis dan personal.",
     "priceSimulated": "Rp 110.000",
@@ -2021,6 +1676,11 @@ export const products: Product[] = [
   {
     "id": "roll-banner",
     "name": "Roll Banner",
+    "dimensions": {
+      "width": 60,
+      "height": 160,
+      "unit": "cm"
+    },
     "category": "Promosi & Event",
     "description": "Cetak Roll Banner Albatros 60x160 berkualitas tinggi. Hasil tajam, awet, dan profesional.",
     "priceSimulated": "Mulai Rp 250.000",
@@ -2036,52 +1696,32 @@ export const products: Product[] = [
       {
         "id": "Flag-008",
         "name": "Albatros 60x160",
+        "dimensions": {
+          "width": 60,
+          "height": 160,
+          "unit": "cm"
+        },
         "price": 250000
       },
       {
         "id": "Flag-009",
         "name": "ALBATROS 80x200",
-        "price": 300000
-      },
-      {
-        "id": "Flag-011",
-        "name": "Albatros Laminasi Dop 60x160",
+        "dimensions": {
+          "width": 80,
+          "height": 200,
+          "unit": "cm"
+        },
         "price": 300000
       },
       {
         "id": "Flag-013",
         "name": "ALBATROS Laminasi Dop 85x200",
+        "dimensions": {
+          "width": 85,
+          "height": 200,
+          "unit": "cm"
+        },
         "price": 350000
-      },
-      {
-        "id": "Flag-010",
-        "name": "Albatros Laminasi Glossy 60x160",
-        "price": 300000
-      },
-      {
-        "id": "Flag-012",
-        "name": "ALBATROS Laminasi Glossy 80x200",
-        "price": 350000
-      },
-      {
-        "id": "Flag-006",
-        "name": "Jerman 60x160",
-        "price": 250000
-      },
-      {
-        "id": "Flag-007",
-        "name": "Jerman 80x200",
-        "price": 300000
-      },
-      {
-        "id": "Flag-004",
-        "name": "Luster 60x160",
-        "price": 250000
-      },
-      {
-        "id": "Flag-005",
-        "name": "Luster 80x200",
-        "price": 300000
       }
     ]
   },
@@ -2098,24 +1738,7 @@ export const products: Product[] = [
       "Pengerjaan Rapi"
     ],
     "iconName": "Shirt",
-    "image": "https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&q=80&w=400",
-    "variants": [
-      {
-        "id": "textile-new-001",
-        "name": "3",
-        "price": 35000
-      },
-      {
-        "id": "textile-new-002",
-        "name": "4",
-        "price": 25000
-      },
-      {
-        "id": "textile-new-003",
-        "name": "5",
-        "price": 15000
-      }
-    ]
+    "image": "https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&q=80&w=400"
   },
   {
     "id": "merch-new-019",
@@ -2149,12 +1772,22 @@ export const products: Product[] = [
     "variants": [
       {
         "id": "print-new-044",
-        "name": "7x17x6.5 Duplex 250",
+        "name": "7x17cm",
+        "dimensions": {
+          "width": 7,
+          "height": 17,
+          "unit": "cm"
+        },
         "price": 2980
       },
       {
         "id": "print-new-043",
-        "name": "8x18x7 Duplex 250",
+        "name": "8x18cm",
+        "dimensions": {
+          "width": 8,
+          "height": 18,
+          "unit": "cm"
+        },
         "price": 3000
       }
     ]
@@ -2181,25 +1814,18 @@ export const products: Product[] = [
     "description": "Cetak Spanduk /  Banner Flexi China 280 gsm Glossy berkualitas tinggi. Hasil tajam, awet, dan profesional.",
     "priceSimulated": "Mulai Rp 20.000",
     "basePrice": 20000,
+    "dimensions": {
+      "width": 300,
+      "height": 100,
+      "unit": "cm"
+    },
     "features": [
       "Kualitas Terbaik",
       "Harga Kompetitif",
       "Proses Cepat"
     ],
     "iconName": "Presentation",
-    "image": "banner-new",
-    "variants": [
-      {
-        "id": "Flag-001",
-        "name": "Banner Flexi China 280 gsm Glossy",
-        "price": 20000
-      },
-      {
-        "id": "Flag-002",
-        "name": "Banner Flexi Korea 440 gsm Doff",
-        "price": 30000
-      }
-    ]
+    "image": "banner-new"
   },
   {
     "id": "Flag-003",
@@ -2208,6 +1834,11 @@ export const products: Product[] = [
     "description": "Cetak Spanduk Banner Umbul-umbul Kain berkualitas tinggi. Hasil tajam, awet, dan profesional.",
     "priceSimulated": "Rp 45.000",
     "basePrice": 45000,
+    "dimensions": {
+      "width": 90,
+      "height": 400,
+      "unit": "cm"
+    },
     "features": [
       "Kualitas Terbaik",
       "Harga Kompetitif",
@@ -2219,6 +1850,11 @@ export const products: Product[] = [
   {
     "id": "merch-new-018",
     "name": "Standee Figure Akrilik 8x12cm",
+    "dimensions": {
+      "width": 8,
+      "height": 12,
+      "unit": "cm"
+    },
     "category": "Merchandise",
     "description": "Cetak Standee Figure Akrilik 8x12cm berkualitas tinggi. Hasil tajam, awet, dan profesional.",
     "priceSimulated": "Rp 45.000",
@@ -2244,19 +1880,7 @@ export const products: Product[] = [
       "Pengerjaan Cepat"
     ],
     "iconName": "Stamp",
-    "image": "https://images.unsplash.com/photo-1562577309-4932fdd64cd1?auto=format&fit=crop&q=80&w=400",
-    "variants": [
-      {
-        "id": "print-sign-new-023",
-        "name": "Standard",
-        "price": 150000
-      },
-      {
-        "id": "print-sign-new-024",
-        "name": "+ Laminasi",
-        "price": 200000
-      }
-    ]
+    "image": "https://images.unsplash.com/photo-1562577309-4932fdd64cd1?auto=format&fit=crop&q=80&w=400"
   },
   {
     "id": "print-new-046",
@@ -2291,6 +1915,11 @@ export const products: Product[] = [
   {
     "id": "stiker-cromo-a3",
     "name": "STIKER CROMO A3+",
+    "dimensions": {
+      "width": 32.9,
+      "height": 48.3,
+      "unit": "cm"
+    },
     "category": "Jasa Cetak",
     "description": "Cetak STIKER CROMO A3+ berkualitas tinggi. Hasil tajam, awet, dan profesional.",
     "priceSimulated": "Mulai Rp 7.500",
@@ -2301,29 +1930,7 @@ export const products: Product[] = [
       "Harga Bersaing"
     ],
     "iconName": "Scissors",
-    "image": "https://images.unsplash.com/photo-1572375992501-4b0892d50c69?auto=format&fit=crop&q=80&w=400",
-    "variants": [
-      {
-        "id": "stiker-new-022",
-        "name": "Standard",
-        "price": 7500
-      },
-      {
-        "id": "stiker-new-027",
-        "name": "CUTTING",
-        "price": 17500
-      },
-      {
-        "id": "stiker-new-030",
-        "name": "LAMINASI",
-        "price": 13500
-      },
-      {
-        "id": "stiker-new-026",
-        "name": "LAMINASI CUTTING",
-        "price": 23500
-      }
-    ]
+    "image": "https://images.unsplash.com/photo-1572375992501-4b0892d50c69?auto=format&fit=crop&q=80&w=400"
   },
   {
     "id": "print-002",
@@ -2353,24 +1960,7 @@ export const products: Product[] = [
       "Harga Bersaing"
     ],
     "iconName": "Scissors",
-    "image": "https://images.unsplash.com/photo-1572375992501-4b0892d50c69?auto=format&fit=crop&q=80&w=400",
-    "variants": [
-      {
-        "id": "stiker-new-049",
-        "name": "Chromo",
-        "price": 17500
-      },
-      {
-        "id": "stiker-new-050",
-        "name": "Vinyl Laminasi Doff",
-        "price": 31000
-      },
-      {
-        "id": "stiker-new-048",
-        "name": "Vinyl Laminasi GLossy",
-        "price": 31000
-      }
-    ]
+    "image": "https://images.unsplash.com/photo-1572375992501-4b0892d50c69?auto=format&fit=crop&q=80&w=400"
   },
   {
     "id": "stiker-new-047",
@@ -2405,12 +1995,12 @@ export const products: Product[] = [
       {
         "id": "stiker-new-001",
         "name": "A3 UV",
+        "dimensions": {
+          "width": 29.7,
+          "height": 42,
+          "unit": "cm"
+        },
         "price": 21000
-      },
-      {
-        "id": "stiker-new-051",
-        "name": "A3+",
-        "price": 16000
       }
     ]
   },
@@ -2447,26 +2037,51 @@ export const products: Product[] = [
       {
         "id": "stiker-new-056",
         "name": "3X3cm",
+        "dimensions": {
+          "width": 3,
+          "height": 3,
+          "unit": "cm"
+        },
         "price": 250
       },
       {
         "id": "stiker-new-055",
         "name": "4x4cm",
+        "dimensions": {
+          "width": 4,
+          "height": 4,
+          "unit": "cm"
+        },
         "price": 400
       },
       {
         "id": "stiker-new-053",
         "name": "5X5cm",
+        "dimensions": {
+          "width": 5,
+          "height": 5,
+          "unit": "cm"
+        },
         "price": 500
       },
       {
         "id": "stiker-new-054",
         "name": "6x6cm",
+        "dimensions": {
+          "width": 6,
+          "height": 6,
+          "unit": "cm"
+        },
         "price": 750
       },
       {
         "id": "stiker-new-052",
         "name": "7x7cm",
+        "dimensions": {
+          "width": 7,
+          "height": 7,
+          "unit": "cm"
+        },
         "price": 900
       }
     ]
@@ -2484,58 +2099,16 @@ export const products: Product[] = [
       "Harga Bersaing"
     ],
     "iconName": "Scissors",
-    "image": "https://images.unsplash.com/photo-1572375992501-4b0892d50c69?auto=format&fit=crop&q=80&w=400",
-    "variants": [
-      {
-        "id": "stiker-new-009",
-        "name": "Duratac Glossy",
-        "price": 75000
-      },
-      {
-        "id": "stiker-new-012",
-        "name": "Duratac Glossy + Cutting",
-        "price": 155000
-      },
-      {
-        "id": "stiker-new-011",
-        "name": "Duratac Glossy + Laminasi",
-        "price": 125000
-      },
-      {
-        "id": "stiker-new-013",
-        "name": "Duratac Glossy + Laminasi + Cutting",
-        "price": 125000
-      },
-      {
-        "id": "stiker-new-006",
-        "name": "Hologram",
-        "price": 150000
-      },
-      {
-        "id": "stiker-new-008",
-        "name": "Hologram  T.PUTIH +WARNA",
-        "price": 200000
-      },
-      {
-        "id": "stiker-new-010",
-        "name": "Vinyl UV + Cutting",
-        "price": 105000
-      },
-      {
-        "id": "stiker-new-015",
-        "name": "Vinyl UV + Laminasi",
-        "price": 125000
-      },
-      {
-        "id": "stiker-new-016",
-        "name": "Vinyl UV + Laminasi + Cutting",
-        "price": 125000
-      }
-    ]
+    "image": "https://images.unsplash.com/photo-1572375992501-4b0892d50c69?auto=format&fit=crop&q=80&w=400"
   },
   {
-    "id": "stiker-new-021",
+    "id": "stiker-mirror-a3",
     "name": "Stiker Mirror A3",
+    "dimensions": {
+      "width": 29.7,
+      "height": 42,
+      "unit": "cm"
+    },
     "category": "Jasa Cetak",
     "description": "Cetak Stiker Mirror A3 berkualitas tinggi. Hasil tajam, awet, dan profesional.",
     "priceSimulated": "Rp 30.000",
@@ -2581,17 +2154,22 @@ export const products: Product[] = [
       {
         "id": "stiker-new-017",
         "name": "flektive Print UV A2",
-        "price": 120000
+        "price": 120000,
+        "dimensions": {
+          "width": 42,
+          "height": 59.4,
+          "unit": "cm"
+        }
       },
       {
         "id": "stiker-new-007",
         "name": "flektive Print UV A3",
+        "dimensions": {
+          "width": 29.7,
+          "height": 42,
+          "unit": "cm"
+        },
         "price": 60000
-      },
-      {
-        "id": "stiker-new-044",
-        "name": "sin Timbul",
-        "price": 300000
       }
     ]
   },
@@ -2613,28 +2191,33 @@ export const products: Product[] = [
       {
         "id": "stiker-new-046",
         "name": "Vinyl A5 Kisscut",
+        "dimensions": {
+          "width": 14.8,
+          "height": 21,
+          "unit": "cm"
+        },
         "price": 8750
       },
       {
         "id": "stiker-new-045",
         "name": "Vinyl A6 Kisscut",
+        "dimensions": {
+          "width": 10.5,
+          "height": 14.8,
+          "unit": "cm"
+        },
         "price": 4400
-      },
-      {
-        "id": "stiker-new-042",
-        "name": "Cromo Kisscut A5",
-        "price": 7000
-      },
-      {
-        "id": "stiker-new-043",
-        "name": "Cromo Kisscut A6",
-        "price": 3500
       }
     ]
   },
   {
     "id": "stiker-silver-a3",
     "name": "STIKER SILVER A3+",
+    "dimensions": {
+      "width": 32.9,
+      "height": 48.3,
+      "unit": "cm"
+    },
     "category": "Jasa Cetak",
     "description": "Cetak STIKER SILVER A3+ CUTTING berkualitas tinggi. Hasil tajam, awet, dan profesional.",
     "priceSimulated": "Mulai Rp 21.000",
@@ -2645,24 +2228,7 @@ export const products: Product[] = [
       "Harga Bersaing"
     ],
     "iconName": "Scissors",
-    "image": "https://images.unsplash.com/photo-1572375992501-4b0892d50c69?auto=format&fit=crop&q=80&w=400",
-    "variants": [
-      {
-        "id": "stiker-new-028",
-        "name": "CUTTING",
-        "price": 25000
-      },
-      {
-        "id": "stiker-new-029",
-        "name": "LAMINASI",
-        "price": 21000
-      },
-      {
-        "id": "stiker-new-023",
-        "name": "LAMINASI CUTTING",
-        "price": 31000
-      }
-    ]
+    "image": "https://images.unsplash.com/photo-1572375992501-4b0892d50c69?auto=format&fit=crop&q=80&w=400"
   },
   {
     "id": "stiker-transparan",
@@ -2680,19 +2246,14 @@ export const products: Product[] = [
     "image": "https://images.unsplash.com/photo-1572375992501-4b0892d50c69?auto=format&fit=crop&q=80&w=400",
     "variants": [
       {
-        "id": "stiker-new-005",
-        "name": "TINTA PUTIH + TINTA WARNA",
-        "price": 125000
-      },
-      {
         "id": "stiker-new-019",
         "name": "Tinta Putih A3+",
+        "dimensions": {
+          "width": 29.7,
+          "height": 42,
+          "unit": "cm"
+        },
         "price": 20000
-      },
-      {
-        "id": "stiker-new-002",
-        "name": "t Meteran",
-        "price": 75000
       }
     ]
   },
@@ -2714,62 +2275,12 @@ export const products: Product[] = [
       {
         "id": "stiker-new-035",
         "name": "DOP A3+",
+        "dimensions": {
+          "width": 29.7,
+          "height": 42,
+          "unit": "cm"
+        },
         "price": 15000
-      },
-      {
-        "id": "stiker-new-037",
-        "name": "DOP A3+ CUTTING",
-        "price": 25000
-      },
-      {
-        "id": "stiker-new-024",
-        "name": "DOP A3+ LAMINASI",
-        "price": 21000
-      },
-      {
-        "id": "stiker-new-036",
-        "name": "DOP A3+ LAMINASI CUTTING",
-        "price": 31000
-      },
-      {
-        "id": "stiker-new-038",
-        "name": "GLOSSY A3+",
-        "price": 15000
-      },
-      {
-        "id": "stiker-new-039",
-        "name": "GLOSSY A3+ CUTTING",
-        "price": 25000
-      },
-      {
-        "id": "stiker-new-040",
-        "name": "GLOSSY A3+ LAMINASI",
-        "price": 21000
-      },
-      {
-        "id": "stiker-new-041",
-        "name": "GLOSSY A3+ LAMINASI CUTTING",
-        "price": 31000
-      },
-      {
-        "id": "stiker-new-031",
-        "name": "TRANSPARAN A3+",
-        "price": 15000
-      },
-      {
-        "id": "stiker-new-033",
-        "name": "TRANSPARAN A3+ CUTTING",
-        "price": 25000
-      },
-      {
-        "id": "stiker-new-032",
-        "name": "TRANSPARAN A3+ LAMINASI",
-        "price": 21000
-      },
-      {
-        "id": "stiker-new-034",
-        "name": "TRANSPARAN A3+ LAMINASI CUTTING",
-        "price": 31000
       }
     ]
   },
@@ -2786,19 +2297,7 @@ export const products: Product[] = [
       "Harga Bersaing"
     ],
     "iconName": "Scissors",
-    "image": "https://images.unsplash.com/photo-1572375992501-4b0892d50c69?auto=format&fit=crop&q=80&w=400",
-    "variants": [
-      {
-        "id": "stiker-new-014",
-        "name": "Standard",
-        "price": 75000
-      },
-      {
-        "id": "stiker-new-018",
-        "name": "+ Spot UV Emboss",
-        "price": 225000
-      }
-    ]
+    "image": "https://images.unsplash.com/photo-1572375992501-4b0892d50c69?auto=format&fit=crop&q=80&w=400"
   },
   {
     "id": "sublimasi-jersey-lengan-p",
@@ -2813,19 +2312,7 @@ export const products: Product[] = [
       "Pengerjaan Rapi"
     ],
     "iconName": "Shirt",
-    "image": "https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&q=80&w=400",
-    "variants": [
-      {
-        "id": "textile-new-004",
-        "name": "anjang",
-        "price": 95000
-      },
-      {
-        "id": "textile-new-005",
-        "name": "endek",
-        "price": 80000
-      }
-    ]
+    "image": "https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&q=80&w=400"
   },
   {
     "id": "tali-lanyard",
@@ -2843,23 +2330,13 @@ export const products: Product[] = [
     "image": "https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&q=80&w=400",
     "variants": [
       {
-        "id": "promo-new-012",
-        "name": "Double Hook",
-        "price": 20000
-      },
-      {
-        "id": "promo-new-009",
-        "name": "Gantugan Kunci",
-        "price": 10000
-      },
-      {
-        "id": "promo-new-011",
-        "name": "Gantugan Kunci Snaphook",
-        "price": 15000
-      },
-      {
         "id": "promo-new-010",
         "name": "ID Card",
+        "dimensions": {
+          "width": 8.56,
+          "height": 5.4,
+          "unit": "cm"
+        },
         "price": 15000
       }
     ]
@@ -2897,6 +2374,11 @@ export const products: Product[] = [
   {
     "id": "merch-new-014",
     "name": "Tempelan Kulkas Magnet 5x5cm Custom",
+    "dimensions": {
+      "width": 5,
+      "height": 5,
+      "unit": "cm"
+    },
     "category": "Merchandise",
     "description": "Cetak Tempelan Kulkas Magnet 5x5cm Custom berkualitas tinggi. Hasil tajam, awet, dan profesional.",
     "priceSimulated": "Rp 13.500",
@@ -2927,22 +2409,32 @@ export const products: Product[] = [
       {
         "id": "print-new-028",
         "name": "/ Table Tent Segitiga A5",
+        "dimensions": {
+          "width": 14.8,
+          "height": 21,
+          "unit": "cm"
+        },
         "price": 9000
       },
       {
         "id": "print-new-029",
         "name": "/ Table Tent Segitiga A6",
+        "dimensions": {
+          "width": 10.5,
+          "height": 14.8,
+          "unit": "cm"
+        },
         "price": 7000
       },
       {
         "id": "print-new-030",
         "name": "Akrilik + Print A4",
+        "dimensions": {
+          "width": 21,
+          "height": 29.7,
+          "unit": "cm"
+        },
         "price": 95000
-      },
-      {
-        "id": "print-new-027",
-        "name": "Akrilik + Print A5",
-        "price": 60000
       }
     ]
   },
@@ -2959,19 +2451,7 @@ export const products: Product[] = [
       "Pengerjaan Cepat"
     ],
     "iconName": "Tag",
-    "image": "https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&q=80&w=400",
-    "variants": [
-      {
-        "id": "promo-new-025",
-        "name": "Kertas",
-        "price": 550
-      },
-      {
-        "id": "promo-new-028",
-        "name": "Polyplex",
-        "price": 700
-      }
-    ]
+    "image": "https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&q=80&w=400"
   },
   {
     "id": "promo-003",
@@ -3001,19 +2481,7 @@ export const products: Product[] = [
       "Proses Cepat"
     ],
     "iconName": "Gift",
-    "image": "https://images.unsplash.com/photo-1513201099705-a9746e1e201f?auto=format&fit=crop&q=80&w=400",
-    "variants": [
-      {
-        "id": "merch-new-004",
-        "name": "Besar",
-        "price": 40000
-      },
-      {
-        "id": "merch-new-005",
-        "name": "Lanscape Tali Hitam",
-        "price": 40000
-      }
-    ]
+    "image": "https://images.unsplash.com/photo-1513201099705-a9746e1e201f?auto=format&fit=crop&q=80&w=400"
   },
   {
     "id": "tripod-banner-50x",
@@ -3028,29 +2496,7 @@ export const products: Product[] = [
       "Proses Cepat"
     ],
     "iconName": "Presentation",
-    "image": "banner-new",
-    "variants": [
-      {
-        "id": "Flag-021",
-        "name": "100cm 1 SISI",
-        "price": 285000
-      },
-      {
-        "id": "Flag-022",
-        "name": "100cm 2SISI",
-        "price": 385000
-      },
-      {
-        "id": "Flag-020",
-        "name": "85cm 1 SISI",
-        "price": 275000
-      },
-      {
-        "id": "Flag-023",
-        "name": "85cm 2 SISI",
-        "price": 375000
-      }
-    ]
+    "image": "banner-new"
   },
   {
     "id": "tumbler",
@@ -3065,29 +2511,7 @@ export const products: Product[] = [
       "Proses Cepat"
     ],
     "iconName": "CupSoda",
-    "image": "https://images.unsplash.com/photo-1602143407151-11115cdbf69c?auto=format&fit=crop&q=80&w=400",
-    "variants": [
-      {
-        "id": "tumbler-new-014",
-        "name": "Arizona Grafir",
-        "price": 60000
-      },
-      {
-        "id": "tumbler-new-006",
-        "name": "Arizona Printing",
-        "price": 60000
-      },
-      {
-        "id": "tumbler-new-018",
-        "name": "Canteen Grafir",
-        "price": 50000
-      },
-      {
-        "id": "tumbler-new-019",
-        "name": "Canteen Printing",
-        "price": 50000
-      }
-    ]
+    "image": "https://images.unsplash.com/photo-1602143407151-11115cdbf69c?auto=format&fit=crop&q=80&w=400"
   },
   {
     "id": "tumbler-americano",
@@ -3102,19 +2526,7 @@ export const products: Product[] = [
       "Proses Cepat"
     ],
     "iconName": "CupSoda",
-    "image": "https://images.unsplash.com/photo-1602143407151-11115cdbf69c?auto=format&fit=crop&q=80&w=400",
-    "variants": [
-      {
-        "id": "tumbler-new-010",
-        "name": "Grafir",
-        "price": 55000
-      },
-      {
-        "id": "tumbler-new-009",
-        "name": "Printing",
-        "price": 55000
-      }
-    ]
+    "image": "https://images.unsplash.com/photo-1602143407151-11115cdbf69c?auto=format&fit=crop&q=80&w=400"
   },
   {
     "id": "tumbler-bowling",
@@ -3129,19 +2541,7 @@ export const products: Product[] = [
       "Proses Cepat"
     ],
     "iconName": "CupSoda",
-    "image": "https://images.unsplash.com/photo-1602143407151-11115cdbf69c?auto=format&fit=crop&q=80&w=400",
-    "variants": [
-      {
-        "id": "tumbler-new-015",
-        "name": "Grafir",
-        "price": 60000
-      },
-      {
-        "id": "tumbler-new-007",
-        "name": "Printing",
-        "price": 60000
-      }
-    ]
+    "image": "https://images.unsplash.com/photo-1602143407151-11115cdbf69c?auto=format&fit=crop&q=80&w=400"
   },
   {
     "id": "tumbler-c",
@@ -3156,24 +2556,7 @@ export const products: Product[] = [
       "Proses Cepat"
     ],
     "iconName": "CupSoda",
-    "image": "https://images.unsplash.com/photo-1602143407151-11115cdbf69c?auto=format&fit=crop&q=80&w=400",
-    "variants": [
-      {
-        "id": "tumbler-new-016",
-        "name": "RUISER 900 Ml - Grafir",
-        "price": 50000
-      },
-      {
-        "id": "tumbler-new-017",
-        "name": "RUISER 900 Ml - PRINT",
-        "price": 50000
-      },
-      {
-        "id": "merch-002",
-        "name": "ustom",
-        "price": 35000
-      }
-    ]
+    "image": "https://images.unsplash.com/photo-1602143407151-11115cdbf69c?auto=format&fit=crop&q=80&w=400"
   },
   {
     "id": "tumbler-new-008",
@@ -3233,24 +2616,7 @@ export const products: Product[] = [
       "Proses Cepat"
     ],
     "iconName": "CupSoda",
-    "image": "https://images.unsplash.com/photo-1602143407151-11115cdbf69c?auto=format&fit=crop&q=80&w=400",
-    "variants": [
-      {
-        "id": "tumbler-new-002",
-        "name": "akura LED Temperature Grafir",
-        "price": 50000
-      },
-      {
-        "id": "tumbler-new-003",
-        "name": "akura LED Temperature Print",
-        "price": 50000
-      },
-      {
-        "id": "tumbler-new-005",
-        "name": "port Printing",
-        "price": 30000
-      }
-    ]
+    "image": "https://images.unsplash.com/photo-1602143407151-11115cdbf69c?auto=format&fit=crop&q=80&w=400"
   },
   {
     "id": "tumbler-tyisoo-classic-900-ml",
@@ -3265,19 +2631,7 @@ export const products: Product[] = [
       "Proses Cepat"
     ],
     "iconName": "CupSoda",
-    "image": "https://images.unsplash.com/photo-1602143407151-11115cdbf69c?auto=format&fit=crop&q=80&w=400",
-    "variants": [
-      {
-        "id": "tumbler-new-012",
-        "name": "Grafir",
-        "price": 50000
-      },
-      {
-        "id": "tumbler-new-011",
-        "name": "Print",
-        "price": 50000
-      }
-    ]
+    "image": "https://images.unsplash.com/photo-1602143407151-11115cdbf69c?auto=format&fit=crop&q=80&w=400"
   },
   {
     "id": "tumbler-new-004",
@@ -3357,6 +2711,11 @@ export const products: Product[] = [
   {
     "id": "x-banner",
     "name": "X Banner",
+    "dimensions": {
+      "width": 60,
+      "height": 160,
+      "unit": "cm"
+    },
     "category": "Promosi & Event",
     "description": "Cetak X Banner 120x160 Luster berkualitas tinggi. Hasil tajam, awet, dan profesional.",
     "priceSimulated": "Mulai Rp 65.000",
@@ -3372,38 +2731,33 @@ export const products: Product[] = [
       {
         "id": "Flag-018",
         "name": "120x160 Luster",
-        "price": 190000
+        "price": 190000,
+        "dimensions": {
+          "width": 120,
+          "height": 160,
+          "unit": "cm"
+        }
       },
       {
         "id": "Flag-017",
         "name": "60x160 Albatross",
-        "price": 100000
-      },
-      {
-        "id": "Flag-019",
-        "name": "60x160 Albatross Laminasi",
-        "price": 100000
-      },
-      {
-        "id": "Flag-016",
-        "name": "60x160 Frontlite Doff",
-        "price": 65000
-      },
-      {
-        "id": "Flag-015",
-        "name": "60x160 Frontlite Jerman",
-        "price": 100000
-      },
-      {
-        "id": "Flag-014",
-        "name": "60x160 Luster",
-        "price": 100000
+        "price": 100000,
+        "dimensions": {
+          "width": 60,
+          "height": 160,
+          "unit": "cm"
+        }
       }
     ]
   },
   {
     "id": "promo-new-001",
     "name": "Yoyo Id Card Logo Resin",
+    "dimensions": {
+      "width": 8.56,
+      "height": 5.4,
+      "unit": "cm"
+    },
     "category": "Promosi & Event",
     "description": "Produk Yoyo Id Card Logo Resin berkualitas tinggi. Cocok untuk kebutuhan bisnis dan personal.",
     "priceSimulated": "Rp 7.000",
