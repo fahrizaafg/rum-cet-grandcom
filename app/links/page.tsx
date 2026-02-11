@@ -35,7 +35,7 @@ const LINKS = [
   },
   {
     title: 'Chat Admin via WhatsApp',
-    url: `https://wa.me/${CONTACT_INFO.whatsapp}?text=Halo%20Admin%2C%20saya%20tertarik%20dengan%20jasa%20cetak%20di%20Rumah%20Cetak%20Grandom`,
+    url: `https://wa.me/${CONTACT_INFO.whatsapp}?text=Halo%20Admin%2C%20saya%20tertarik%20dengan%20jasa%20cetak%20di%20Rumah%20Cetak%20Grandcom`,
     icon: MessageCircle,
     filled: false,
   },
@@ -92,7 +92,7 @@ export default function LinksPage() {
             <Printer className="w-10 h-10 text-orange-500" />
           </div>
           <h1 className="text-2xl font-extrabold text-slate-900 tracking-tight mb-2">
-            Rumah Cetak Grandom
+            Rumah Cetak Grandcom
           </h1>
           <p className="text-slate-500 font-medium text-sm px-4">
             Solusi Percetakan Profesional & Merchandise Custom
@@ -128,7 +128,7 @@ export default function LinksPage() {
         {/* Footer */}
         <motion.footer variants={itemVariants} className="text-center">
           <p className="text-slate-400 text-xs font-medium">
-            &copy; {new Date().getFullYear()} Rumah Cetak Grandom
+            &copy; {new Date().getFullYear()} Rumah Cetak Grandcom
           </p>
           <p className="text-slate-300 text-[10px] mt-1">
             Built by Fahriza

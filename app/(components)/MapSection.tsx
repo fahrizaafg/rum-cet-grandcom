@@ -17,7 +17,7 @@ export default function MapSection() {
           allowFullScreen
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
-          title="Lokasi Rumah Cetak Grandom"
+          title="Lokasi Rumah Cetak Grandcom"
           className="absolute inset-0 w-full h-full grayscale group-hover:grayscale-0 transition-all duration-700"
         />
       </div>

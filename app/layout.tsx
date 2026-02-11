@@ -19,27 +19,27 @@ const playfair = Playfair_Display({
 // Metadata SEO Global
 export const metadata: Metadata = {
   title: {
-    template: '%s | Rumah Cetak Grandom',
-    default: 'Rumah Cetak Grandom - Solusi Percetakan Profesional',
+    template: '%s | Rumah Cetak Grandcom',
+    default: 'Rumah Cetak Grandcom - Solusi Percetakan Profesional',
   },
   description: "Jasa percetakan berkualitas tinggi untuk undangan, spanduk, kartu nama, dan kebutuhan branding bisnis Anda. Cepat, murah, dan profesional.",
   keywords: ["percetakan", "cetak undangan", "digital printing", "spanduk", "kartu nama", "brosur", "percetakan murah"],
-  authors: [{ name: "Rumah Cetak Grandom" }],
+  authors: [{ name: "Rumah Cetak Grandcom" }],
   icons: {
     icon: '/images/logo.png?v=1',
     apple: '/images/logo.png?v=1',
   },
   openGraph: {
-    title: 'Rumah Cetak Grandom - Solusi Cetak Kreatif & Cepat',
+    title: 'Rumah Cetak Grandcom - Solusi Cetak Kreatif & Cepat',
     description: 'Jasa percetakan berkualitas tinggi untuk undangan, spanduk, kartu nama, dan kebutuhan branding bisnis Anda.',
-    url: 'https://rumah-cetak-grandom.vercel.app',
-    siteName: 'Rumah Cetak Grandom',
+    url: 'https://rumah-cetak-grandcom.vercel.app',
+    siteName: 'Rumah Cetak Grandcom',
     images: [
       {
-        url: 'https://rumah-cetak-grandom.vercel.app/og-image.jpg', // Pastikan file ini ada di folder public nanti
+        url: 'https://rumah-cetak-grandcom.vercel.app/og-image.jpg', // Pastikan file ini ada di folder public nanti
         width: 1200,
         height: 630,
-        alt: 'Rumah Cetak Grandom Preview',
+        alt: 'Rumah Cetak Grandcom Preview',
       },
     ],
     locale: 'id_ID',
@@ -47,9 +47,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Rumah Cetak Grandom - Solusi Cetak Kreatif & Cepat',
+    title: 'Rumah Cetak Grandcom - Solusi Cetak Kreatif & Cepat',
     description: 'Jasa percetakan berkualitas tinggi untuk undangan, spanduk, kartu nama, dan kebutuhan branding bisnis Anda.',
-    images: ['https://rumah-cetak-grandom.vercel.app/og-image.jpg'],
+    images: ['https://rumah-cetak-grandcom.vercel.app/og-image.jpg'],
   },
 };
 
