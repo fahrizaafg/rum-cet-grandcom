@@ -5,8 +5,8 @@
   --color-secondary: #F9F9F7; /* Off-white */
   --color-dark: #1A1A1A; /* Soft Black */
   --color-muted: #666666; /* Muted Text */
-  --font-display: 'Playfair Display', serif;
-  --font-sans: 'Plus Jakarta Sans', sans-serif;
+  --font-display: var(--font-playfair);
+  --font-sans: var(--font-jakarta);
 }
 
 :root {

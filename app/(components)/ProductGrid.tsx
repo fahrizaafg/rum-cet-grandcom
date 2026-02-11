@@ -107,7 +107,7 @@ export default function ProductGrid() {
             placeholder="Cari koleksi..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="block w-full pl-12 pr-10 py-4 bg-transparent border-b-2 border-gray-200 text-dark placeholder-muted focus:outline-none focus:border-primary font-display text-lg transition-colors"
+            className="block w-full pl-12 pr-10 py-4 bg-transparent border-b-2 border-gray-200 text-dark placeholder-muted focus:outline-none focus:border-primary font-sans text-lg transition-colors"
           />
           {searchQuery && (
             <button 
@@ -127,7 +127,7 @@ export default function ProductGrid() {
         />
 
         {/* Info Text */}
-        <div className="text-center text-sm text-slate-500 font-medium animate-in fade-in slide-in-from-bottom-2 duration-500">
+        <div className="text-center text-sm text-slate-500 font-sans font-medium animate-in fade-in slide-in-from-bottom-2 duration-500">
             Menampilkan <span className="font-bold text-slate-900">{filteredProducts.length > 0 ? (currentPage - 1) * ITEMS_PER_PAGE + 1 : 0}</span> - <span className="font-bold text-slate-900">{Math.min(currentPage * ITEMS_PER_PAGE, filteredProducts.length)}</span> dari <span className="font-bold text-slate-900">{filteredProducts.length}</span> produk
         </div>
       </div>
@@ -159,13 +159,13 @@ export default function ProductGrid() {
               exit={{ opacity: 0 }}
               className="col-span-full flex flex-col items-center justify-center py-20 text-center"
             >
-              <p className="text-xl text-slate-500 font-medium">Tidak ada produk yang ditemukan.</p>
+              <p className="text-xl text-slate-500 font-sans font-medium">Tidak ada produk yang ditemukan.</p>
               <button 
                 onClick={() => {
                   setSelectedCategory('Semua Produk');
                   setSearchQuery('');
                 }}
-                className="mt-4 text-primary font-bold hover:underline"
+                className="mt-4 text-primary font-sans font-bold hover:underline"
               >
                 Reset Filter
               </button>
@@ -195,20 +195,20 @@ export default function ProductGrid() {
                 // or just show a window if it gets too large. 12 pages is okay to wrap.
                 
                 return (
-                    <button
-                        key={page}
-                        onClick={() => handlePageChange(page)}
-                        className={`
-                            w-10 h-10 rounded-full font-bold text-sm transition-all
-                            ${currentPage === page 
-                                ? 'bg-primary text-white shadow-lg shadow-orange-200 scale-110' 
-                                : 'bg-white border border-slate-200 text-slate-500 hover:bg-slate-50 hover:border-slate-300'
-                            }
-                        `}
-                    >
-                        {page}
-                    </button>
-                );
+                        <button
+                            key={page}
+                            onClick={() => handlePageChange(page)}
+                            className={`
+                                w-10 h-10 rounded-full font-sans font-bold text-sm transition-all
+                                ${currentPage === page 
+                                    ? 'bg-primary text-white shadow-lg shadow-orange-200 scale-110' 
+                                    : 'bg-white border border-slate-200 text-slate-500 hover:bg-slate-50 hover:border-slate-300'
+                                }
+                            `}
+                        >
+                            {page}
+                        </button>
+                    );
             })}
 
             <button

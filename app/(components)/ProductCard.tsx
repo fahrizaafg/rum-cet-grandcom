@@ -77,7 +77,7 @@ export default function ProductCard({ product, index = 0 }: ProductCardProps) {
 
           {/* Organic Price Tag */}
           <div className="absolute top-4 right-4 z-20">
-            <span className="inline-flex items-center px-4 py-2 bg-primary text-white text-xs font-bold tracking-wide uppercase shape-organic shadow-lg transform rotate-3 group-hover:rotate-0 transition-transform duration-300">
+            <span className="inline-flex items-center px-4 py-2 bg-primary text-white text-xs font-sans font-medium tracking-wide uppercase shape-organic shadow-lg transform rotate-3 group-hover:rotate-0 transition-transform duration-300">
               {product.priceSimulated}
             </span>
           </div>
@@ -90,16 +90,16 @@ export default function ProductCard({ product, index = 0 }: ProductCardProps) {
       {/* Editorial Content */}
       <div className="flex flex-col flex-grow px-2">
         <div className="flex items-start justify-between mb-2">
-           <span className="text-xs font-bold tracking-widest uppercase text-muted border-b border-primary/30 pb-1">
+           <span className="text-xs font-sans font-bold tracking-widest uppercase text-muted border-b border-primary/30 pb-1">
              {product.category}
            </span>
         </div>
         
-        <h3 className="font-display text-2xl md:text-3xl font-bold text-dark mb-3 leading-tight group-hover:text-primary transition-colors">
+        <h3 className="font-sans text-2xl md:text-3xl font-bold text-dark mb-3 leading-snug group-hover:text-primary transition-colors capitalize">
           {product.name}
         </h3>
         
-        <p className="text-muted text-sm leading-relaxed line-clamp-2 mb-6 font-sans">
+        <p className="text-muted text-sm leading-relaxed line-clamp-2 mb-6 font-sans font-normal">
           {product.description}
         </p>
         
@@ -108,7 +108,7 @@ export default function ProductCard({ product, index = 0 }: ProductCardProps) {
           <div className="bg-slate-50 p-4 rounded-xl border border-slate-100 mb-6 relative z-20">
             <div className="flex justify-between items-center mb-3">
               <span className="text-xs font-bold text-slate-500 uppercase">Estimasi Harga</span>
-              <span className="text-lg font-bold text-primary tabular-nums animate-in fade-in duration-300">
+              <span className="text-lg font-medium text-primary tabular-nums animate-in fade-in duration-300">
                 {calculatedPrice ? formatCurrency(calculatedPrice) : '-'}
               </span>
             </div>

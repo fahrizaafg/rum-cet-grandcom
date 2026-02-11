@@ -124,7 +124,7 @@ export default function ServicesPage() {
             <span className="inline-block py-1 px-3 rounded-full bg-orange-100 text-orange-600 text-xs font-bold mb-6 tracking-widest uppercase">
               Our Expertise
             </span>
-            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 mb-6 leading-tight">
+            <h1 className="font-sans text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 mb-6 leading-tight">
               Lebih dari Sekadar Cetak,<br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-amber-500">
                 Kami Mewujudkan Ide.
@@ -147,7 +147,7 @@ export default function ServicesPage() {
                   <div className="w-14 h-14 bg-orange-50 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-orange-500 transition-colors duration-300">
                     <pillar.icon className="w-7 h-7 text-orange-500 group-hover:text-white transition-colors duration-300" />
                   </div>
-                  <h3 className="font-display text-xl font-bold text-slate-900 mb-3">
+                  <h3 className="font-sans text-xl font-bold text-slate-900 mb-3">
                     {pillar.title}
                   </h3>
                   <p className="text-slate-500 text-sm leading-relaxed flex-grow">
@@ -166,7 +166,7 @@ export default function ServicesPage() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
             <div className="lg:col-span-5">
               <FadeInUp>
-                <h2 className="font-display text-3xl md:text-4xl font-bold text-slate-900 mb-6">
+                <h2 className="font-sans text-3xl md:text-4xl font-bold text-slate-900 mb-6">
                   Kenali Bahan <br />
                   <span className="text-orange-500">Sebelum Mencetak</span>
                 </h2>
@@ -202,7 +202,7 @@ export default function ServicesPage() {
             </div>
 
             <div className="relative z-10">
-              <h2 className="font-display text-3xl md:text-5xl font-bold text-white mb-6">
+              <h2 className="font-sans text-3xl md:text-5xl font-bold text-white mb-6">
                 Siap Mewujudkan Ide Anda?
               </h2>
               <p className="text-slate-300 text-lg mb-10 max-w-2xl mx-auto">

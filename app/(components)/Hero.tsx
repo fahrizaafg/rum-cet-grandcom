@@ -56,7 +56,7 @@ export default function Hero() {
           {/* Headline - Top Left (Spans 8 cols) */}
           <div className="col-span-12 lg:col-span-9 relative">
             <motion.h1 
-              className="font-display text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-bold text-dark leading-[0.9] tracking-tighter"
+              className="font-display text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-extrabold text-dark leading-[0.9] tracking-tighter"
               variants={sentence}
               initial="hidden"
               animate="visible"
@@ -157,7 +157,7 @@ export default function Hero() {
                </div>
                <div>
                  <div className="text-xs font-bold text-muted uppercase tracking-wider">Status</div>
-                 <div className="font-display font-bold text-dark">Ready to Print</div>
+                 <div className="font-sans font-bold text-dark">Ready to Print</div>
                </div>
              </motion.div>
           </div>

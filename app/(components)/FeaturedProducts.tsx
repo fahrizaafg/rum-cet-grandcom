@@ -51,10 +51,10 @@ export default function FeaturedProducts() {
     <section className="py-16 px-4 md:px-8 bg-slate-50">
       <div className="max-w-7xl mx-auto">
         <div className="mb-12 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+          <h2 className="text-3xl md:text-4xl font-display font-bold text-slate-900 mb-4">
             Produk Unggulan
           </h2>
-          <p className="text-slate-600 max-w-2xl mx-auto">
+          <p className="text-slate-600 max-w-2xl mx-auto font-sans">
             Pilihan terbaik untuk kebutuhan cetak personal dan bisnis Anda.
           </p>
         </div>

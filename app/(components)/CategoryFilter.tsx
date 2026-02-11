@@ -59,7 +59,7 @@ export default function CategoryFilter({
               onClick={() => onSelectCategory(category)}
               whileTap={{ scale: 0.95 }}
               className={`
-                flex-shrink-0 px-5 py-3 rounded-full text-sm font-semibold transition-all duration-300 border snap-center whitespace-nowrap
+                flex-shrink-0 px-5 py-3 rounded-full text-sm font-sans font-semibold transition-all duration-300 border snap-center whitespace-nowrap
                 ${isActive 
                   ? 'bg-primary text-white border-primary shadow-lg shadow-orange-100' 
                   : 'bg-white text-slate-600 border-gray-200 hover:border-primary hover:text-primary hover:bg-orange-50'
