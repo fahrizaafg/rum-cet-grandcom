@@ -42,8 +42,8 @@ export default function JsonLd() {
       {
         "@type": "OpeningHoursSpecification",
         dayOfWeek: "Saturday",
-        opens: "09:00",
-        closes: "15:00",
+        opens: "08:00",
+        closes: "14:00",
       },
     ],
     sameAs: [

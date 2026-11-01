@@ -83,7 +83,7 @@ export default function Footer() {
                 <Clock className="w-5 h-5 text-orange-500 shrink-0 opacity-50" />
                 <div>
                   <p className="font-semibold text-slate-800">Sabtu</p>
-                  <p className="text-slate-500">09.00 - 15.00 WIB</p>
+                  <p className="text-slate-500">08.00 - 14.00 WIB</p>
                 </div>
               </div>
               <div className="mt-6 pt-6 border-t border-slate-200">
