@@ -3,8 +3,8 @@ export default function JsonLd() {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "Rumah Cetak Grandcom",
-    "url": "https://rumah-cetak-grandcom.vercel.app",
-    "logo": "https://rumah-cetak-grandcom.vercel.app/images/logo.png",
+    "url": "https://grandcom.biz.id",
+    "logo": "https://grandcom.biz.id/images/logo.png",
     "contactPoint": {
       "@type": "ContactPoint",
       "telephone": "+62-896-7710-4929",

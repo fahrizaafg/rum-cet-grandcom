@@ -25,7 +25,13 @@ export const viewport: Viewport = {
 };
 
 // Metadata SEO Global
+const SITE_URL = 'https://grandcom.biz.id';
+
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
+  alternates: {
+    canonical: '/',
+  },
   title: {
     template: '%s | Rumah Cetak Grandcom',
     default: 'Rumah Cetak Grandcom - Solusi Percetakan Profesional',
@@ -40,14 +46,14 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Rumah Cetak Grandcom - Solusi Cetak Kreatif & Cepat',
     description: 'Jasa percetakan berkualitas tinggi untuk undangan, spanduk, kartu nama, dan kebutuhan branding bisnis Anda.',
-    url: 'https://rumah-cetak-grandcom.vercel.app',
+    url: SITE_URL,
     siteName: 'Rumah Cetak Grandcom',
     images: [
       {
-        url: 'https://rumah-cetak-grandcom.vercel.app/og-image.jpg', // Pastikan file ini ada di folder public nanti
+        url: '/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'Rumah Cetak Grandcom Preview',
+        alt: 'Rumah Cetak Grandcom — digital printing Bandung',
       },
     ],
     locale: 'id_ID',
@@ -57,7 +63,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Rumah Cetak Grandcom - Solusi Cetak Kreatif & Cepat',
     description: 'Jasa percetakan berkualitas tinggi untuk undangan, spanduk, kartu nama, dan kebutuhan branding bisnis Anda.',
-    images: ['https://rumah-cetak-grandcom.vercel.app/og-image.jpg'],
+    images: ['/og-image.png'],
   },
 };
 
