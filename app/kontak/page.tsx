@@ -5,6 +5,7 @@ import MapSection from "../(components)/MapSection";
 export const metadata = {
   title: 'Kontak',
   description: 'Hubungi kami untuk konsultasi dan pemesanan layanan percetakan.',
+  alternates: { canonical: '/kontak' },
 };
 
 /**

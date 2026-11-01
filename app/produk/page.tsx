@@ -4,6 +4,7 @@ import FadeInUp from "../(components)/FadeInUp";
 export const metadata = {
   title: 'Harga & Katalog',
   description: 'Daftar harga lengkap layanan percetakan dan produk custom kami.',
+  alternates: { canonical: '/produk' },
 };
 
 export default function PricingPage() {

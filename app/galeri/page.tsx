@@ -4,6 +4,7 @@ import FadeInUp from "../(components)/FadeInUp";
 export const metadata = {
   title: 'Galeri',
   description: 'Lihat hasil karya percetakan kami yang berkualitas tinggi.',
+  alternates: { canonical: '/galeri' },
 };
 
 /**

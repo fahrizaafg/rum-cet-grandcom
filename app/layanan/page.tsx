@@ -8,6 +8,7 @@ import { services } from '../(data)/services';
 export const metadata: Metadata = {
   title: 'Layanan Kami',
   description: 'Solusi percetakan lengkap mulai dari desain profesional, cetak berkualitas tinggi, hingga hasil akhir yang memuaskan.',
+  alternates: { canonical: '/layanan' },
 };
 
 export default function ServicesPage() {
